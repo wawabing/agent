@@ -1,0 +1,62 @@
+{
+  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": [
+    {
+      "rule": {
+        "column": "Message",
+        "operator": "contains",
+        "value": "FAILED",
+        "normal_label": 0,
+        "anomaly_label": 1,
+        "source": "anomaly_score_analysis"
+      },
+      "confidence": 9
+    }
+  ],
+  "06520421324f301d1dab58e626ac7b0ed41916933d9a5e6d42481313224eea24": [
+    {
+      "rule": {
+        "type": "compound",
+        "logic": "OR",
+        "rules": [
+          {
+            "column": "Level",
+            "operator": "==",
+            "value": "WARN"
+          },
+          {
+            "column": "Level",
+            "operator": "==",
+            "value": "ERROR"
+          },
+          {
+            "column": "Level",
+            "operator": "==",
+            "value": "CRITICAL"
+          }
+        ],
+        "normal_label": 0,
+        "anomaly_label": 1,
+        "source": "comprehensive_log_level_analysis",
+        "confidence_boost": 0.95,
+        "comprehensive": true,
+        "all_values": [
+          "DEBUG",
+          "INFO",
+          "WARN",
+          "ERROR",
+          "CRITICAL"
+        ],
+        "anomalous_values": [
+          "WARN",
+          "ERROR",
+          "CRITICAL"
+        ],
+        "normal_values": [
+          "DEBUG",
+          "INFO"
+        ]
+      },
+      "confidence": 4
+    }
+  ]
+}

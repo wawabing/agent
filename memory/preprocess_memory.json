@@ -1,0 +1,160 @@
+{
+  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": {
+    "rules": {
+      "keep_columns": [
+        "Component",
+        "Operation",
+        "ResponseTime_ms",
+        "MemoryUsage_MB",
+        "ThreadCount",
+        "RequestID",
+        "Message"
+      ],
+      "drop_columns": [
+        "LineId"
+      ],
+      "fillna": {
+        "Component": "",
+        "Operation": "",
+        "ResponseTime_ms": 0,
+        "MemoryUsage_MB": 0,
+        "ThreadCount": 0,
+        "RequestID": "",
+        "Message": ""
+      }
+    }
+  },
+  "06520421324f301d1dab58e626ac7b0ed41916933d9a5e6d42481313224eea24": {
+    "rules": {
+      "keep_columns": [
+        "Level",
+        "Service",
+        "ResponseTime_ms",
+        "MemoryUsage_MB",
+        "ThreadCount",
+        "Message"
+      ],
+      "drop_columns": [
+        "LineId",
+        "Timestamp"
+      ],
+      "fillna": {
+        "Level": "",
+        "Service": "",
+        "ResponseTime_ms": 0,
+        "MemoryUsage_MB": 0,
+        "ThreadCount": 0,
+        "Message": ""
+      }
+    }
+  },
+  "5a6c194b9814b1e631f936e374d683a9f71d6f85f6dd5ce2d32c7a7f04867d38": {
+    "rules": {
+      "keep_columns": [
+        " Destination Port",
+        " Total Fwd Packets",
+        " Total Backward Packets",
+        "Total Length of Fwd Packets",
+        " Total Length of Bwd Packets",
+        " Fwd Packet Length Max",
+        " Fwd Packet Length Min",
+        " Fwd Packet Length Mean",
+        " Fwd Packet Length Std",
+        "Bwd Packet Length Max",
+        " Bwd Packet Length Min",
+        " Bwd Packet Length Mean",
+        " Bwd Packet Length Std",
+        "Flow Bytes/s",
+        " Flow Packets/s",
+        "Fwd Packets/s",
+        " Bwd Packets/s",
+        " Min Packet Length",
+        " Max Packet Length",
+        " Packet Length Mean",
+        " Packet Length Std",
+        " Packet Length Variance",
+        "FIN Flag Count",
+        " SYN Flag Count",
+        " RST Flag Count",
+        " PSH Flag Count",
+        " ACK Flag Count",
+        " URG Flag Count",
+        " CWE Flag Count",
+        " ECE Flag Count",
+        " Down/Up Ratio",
+        " Average Packet Size",
+        " Avg Fwd Segment Size",
+        " Avg Bwd Segment Size",
+        "Subflow Fwd Packets",
+        " Subflow Fwd Bytes",
+        " Subflow Bwd Packets",
+        " Subflow Bwd Bytes",
+        "Init_Win_bytes_forward",
+        " Init_Win_bytes_backward",
+        " act_data_pkt_fwd",
+        " min_seg_size_forward",
+        "Active Mean",
+        " Active Std",
+        " Active Max",
+        " Active Min",
+        "Idle Mean",
+        " Idle Std",
+        " Idle Max",
+        " Idle Min"
+      ],
+      "drop_columns": [],
+      "fillna": {
+        " Destination Port": 0,
+        " Total Fwd Packets": 0,
+        " Total Backward Packets": 0,
+        "Total Length of Fwd Packets": 0,
+        " Total Length of Bwd Packets": 0,
+        " Fwd Packet Length Max": 0,
+        " Fwd Packet Length Min": 0,
+        " Fwd Packet Length Mean": 0,
+        " Fwd Packet Length Std": 0,
+        "Bwd Packet Length Max": 0,
+        " Bwd Packet Length Min": 0,
+        " Bwd Packet Length Mean": 0,
+        " Bwd Packet Length Std": 0,
+        "Flow Bytes/s": 0,
+        " Flow Packets/s": 0,
+        "Fwd Packets/s": 0,
+        " Bwd Packets/s": 0,
+        " Min Packet Length": 0,
+        " Max Packet Length": 0,
+        " Packet Length Mean": 0,
+        " Packet Length Std": 0,
+        " Packet Length Variance": 0,
+        "FIN Flag Count": 0,
+        " SYN Flag Count": 0,
+        " RST Flag Count": 0,
+        " PSH Flag Count": 0,
+        " ACK Flag Count": 0,
+        " URG Flag Count": 0,
+        " CWE Flag Count": 0,
+        " ECE Flag Count": 0,
+        " Down/Up Ratio": 0,
+        " Average Packet Size": 0,
+        " Avg Fwd Segment Size": 0,
+        " Avg Bwd Segment Size": 0,
+        "Subflow Fwd Packets": 0,
+        " Subflow Fwd Bytes": 0,
+        " Subflow Bwd Packets": 0,
+        " Subflow Bwd Bytes": 0,
+        "Init_Win_bytes_forward": 0,
+        " Init_Win_bytes_backward": 0,
+        " act_data_pkt_fwd": 0,
+        " min_seg_size_forward": 0,
+        "Active Mean": 0,
+        " Active Std": 0,
+        " Active Max": 0,
+        " Active Min": 0,
+        "Idle Mean": 0,
+        " Idle Std": 0,
+        " Idle Max": 0,
+        " Idle Min": 0
+      }
+    }
+  }
+}
