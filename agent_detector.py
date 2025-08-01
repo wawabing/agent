@@ -2,8 +2,6 @@ import pandas as pd
 import json
 import os
 import math
-import tiktoken
-from openai import OpenAI
 from typing import Optional, Dict, Any, List, Callable, TypedDict
 import hashlib
 from dotenv import load_dotenv
@@ -20,61 +18,93 @@ import matplotlib.pyplot as plt
 from langgraph.graph import StateGraph, END
 from langchain_core.runnables import RunnableConfig
 import numpy as np
+import boto3
+from botocore.exceptions import ClientError
 
 # Load environment variables from .env file
 load_dotenv()
 
 class AgentDetector:
-    def __init__(self, model="gpt-3.5-turbo", heuristic_model=None):
+    def __init__(self, model="anthropic.claude-3-sonnet-20240229-v1:0", heuristic_model=None, region="eu-west-2"):
         try:
             base_path = os.path.dirname(__file__)
         except NameError:
-            base_path = os.getcwd()  # fallback if __file__ is not defined
+            base_path = os.getcwd()
+            
         self.preprocess_memory_path = os.path.join(base_path, "memory", "preprocess_memory.json")
         self.hyperparam_memory_path = os.path.join(base_path, "memory", "hyperparam_memory.json")
         self.heuristic_memory_path = os.path.join(base_path, "memory", "heuristic_memory.json")
         self.log_structure_memory_path = os.path.join(base_path, "memory", "log_structure_memory.json")
         
-        # Base model
+        # AWS Bedrock setup
+        self.region = region
         self.model = model
+        self.heuristic_model = heuristic_model or model
         
-        # Set the best available model for heuristic derivation
-        # Default priority: gpt-4-turbo > gpt-4 > base model
-        if heuristic_model:
-            self.heuristic_model = heuristic_model
-        else:
-            # Try to use the best available model for heuristic derivation
-            try:
-                client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-                models = client.models.list()
-                model_ids = [m.id for m in models.data]
-                
-                if "gpt-4-turbo" in model_ids:
-                    self.heuristic_model = "gpt-4-turbo"
-                    print(f"[agent] Using gpt-4-turbo for heuristic derivation")
-                elif "gpt-4" in model_ids:
-                    self.heuristic_model = "gpt-4"
-                    print(f"[agent] Using gpt-4 for heuristic derivation")
-                else:
-                    self.heuristic_model = model
-                    print(f"[agent] Using {model} for heuristic derivation")
-            except Exception as e:
-                print(f"[agent] Error accessing models: {e}. Using {model} for heuristic derivation")
-                self.heuristic_model = model
-        self.tokenizer = tiktoken.encoding_for_model(model)
-        self.max_tokens = 14000 
-
-        # Load memory
+        # Initialize Bedrock client
+        try:
+            self.bedrock_client = boto3.client(
+                service_name='bedrock-runtime',
+                region_name=self.region,
+                aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+                aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY")
+            )
+            print(f"[agent] AWS Bedrock client initialized with model: {self.model}")
+        except Exception as e:
+            print(f"[agent] Error initializing Bedrock client: {e}")
+            raise
+        
+        # Load memory (same as before)
         self.preprocess_memory = self._load_memory(self.preprocess_memory_path)
         self.hyperparam_memory = self._load_memory(self.hyperparam_memory_path)
         self.heuristic_memory = self._load_memory(self.heuristic_memory_path)
         self.log_structure_memory = self._load_memory(self.log_structure_memory_path)
 
-        # OpenAI client
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    def _call_bedrock_model(self, prompt, system_message=None, max_tokens=4000, temperature=0):
+        """
+        Helper method to call AWS Bedrock Claude 3 Sonnet with consistent interface
+        """
+        try:
+            # Claude 3 Sonnet format
+            messages = []
+            messages.append({
+                "role": "user",
+                "content": prompt
+            })
+            
+            body = {
+                "anthropic_version": "bedrock-2023-05-31",
+                "max_tokens": max_tokens,
+                "temperature": temperature,
+                "messages": messages
+            }
+            
+            if system_message:
+                body["system"] = system_message
+            
+            # Make the API call
+            response = self.bedrock_client.invoke_model(
+                modelId=self.model,
+                body=json.dumps(body),
+                contentType='application/json',
+                accept='application/json'
+            )
+            
+            # Parse the response
+            response_body = json.loads(response['body'].read())
+            
+            # Extract text from Claude response
+            return response_body['content'][0]['text']
+                
+        except ClientError as e:
+            print(f"[BEDROCK:ERROR] AWS Bedrock API error: {e}")
+            raise
+        except Exception as e:
+            print(f"[BEDROCK:ERROR] Unexpected error calling Bedrock: {e}")
+            raise
 
     def _count_tokens(self, text: str) -> int:
-        return len(self.tokenizer.encode(text))
+        return len(text) // 4
     
     def _load_memory(self, path: str) -> dict:
         if os.path.exists(path):
@@ -148,7 +178,7 @@ class AgentDetector:
             "rule": new_rule,
             "confidence": confidence_increment
         }
-        print(f"[HEURISTIC:NEW] Adding new rule: {new_rule.get('column')} {new_rule.get('operator')} '{new_rule.get('value')}'")
+        print(f"[HEURISTIC:NEW] Adding new rule")
         existing_heuristics.append(new_entry)
         self.heuristic_memory[schema_id] = existing_heuristics
         self._save_memory(self.heuristic_memory, "heuristic")
@@ -193,14 +223,38 @@ class AgentDetector:
             for col, method in rules["fillna"].items():
                 if col not in df.columns:
                     continue
-                if method == "mean":
-                    df[col] = df[col].fillna(df[col].mean())
+                
+                # Handle null/None values properly
+                if method is None or method == "null":
+                    # For None/null values, skip filling or use appropriate defaults
+                    if df[col].dtype == 'object':
+                        # For text columns, we can leave NaN as is or use empty string
+                        continue  # Skip filling - leave NaN values as they are
+                    else:
+                        # For numeric columns, use 0 as default
+                        df[col] = df[col].fillna(0)
+                elif method == "mean":
+                    if df[col].dtype in ['int64', 'float64']:
+                        df[col] = df[col].fillna(df[col].mean())
+                    else:
+                        # For non-numeric columns, skip mean calculation
+                        continue
                 elif method == "ffill":
                     df[col] = df[col].fillna(method="ffill")
+                elif method == "bfill":
+                    df[col] = df[col].fillna(method="bfill")
                 else:
+                    # For any other value, try to use it directly
                     try:
-                        df[col] = df[col].fillna(float(method))
-                    except:
+                        # Try to convert to appropriate type first
+                        if df[col].dtype in ['int64', 'float64']:
+                            fill_value = float(method) if method != "" else 0
+                        else:
+                            fill_value = str(method) if method != "" else ""
+                        
+                        df[col] = df[col].fillna(fill_value)
+                    except (ValueError, TypeError):
+                        # If conversion fails, use the value as-is (for strings)
                         df[col] = df[col].fillna(method)
 
         return df
@@ -266,13 +320,13 @@ class AgentDetector:
             "Ensure columns like 'LineId', 'RowID', 'Index', etc., are dropped. Only return relevant data fields."
         )
 
-        res = self.client.chat.completions.create(
-            model=self.model,
-            messages=[{"role": "system", "content": system_msg}, {"role": "user", "content": prompt}],
-            temperature=0,
+        raw = self._call_bedrock_model(
+            prompt=prompt,
+            system_message=system_msg,
+            max_tokens=2000,
+            temperature=0
         )
 
-        raw = res.choices[0].message.content
         match = re.search(r'\{[\s\S]*?\}', raw)
         if not match:
             raise ValueError("No JSON object found in LLM response.")
@@ -354,18 +408,32 @@ class AgentDetector:
         "error_status_columns": ["column1", "column2", ...]
         }}
         """
+        
+        system_message = "You are a log analysis expert. Respond with valid JSON only."
 
-        # Query LLM directly using the agent's client
+
+        # CHANGED: Query Claude 3 Sonnet via Bedrock instead of OpenAI
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": "You are a log analysis expert. Respond with valid JSON only."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0,
-                max_tokens=1000
-            ).choices[0].message.content.strip()
+            response = self._call_bedrock_model(
+                prompt=prompt,
+                system_message=system_message,
+                max_tokens=1000,
+                temperature=0
+            )
+            
+            print(f"[BEDROCK:RESPONSE] Raw response: {response[:200]}...")
+            
+            # Clean the response to extract JSON
+            response = response.strip()
+            
+            # Remove any markdown code blocks if present
+            if response.startswith("```json"):
+                response = response[7:]
+            if response.startswith("```"):
+                response = response[3:]
+            if response.endswith("```"):
+                response = response[:-3]
+            response = response.strip()
             
             # Parse the JSON response
             structure = json.loads(response)
@@ -379,7 +447,20 @@ class AgentDetector:
             self.log_structure_memory[schema_id] = structure
             self._save_memory(self.log_structure_memory, "log_structure")
             
+            print(f"[BEDROCK:SUCCESS] Successfully analyzed log structure using Claude 3 Sonnet")
             return structure, existed
+            
+        except json.JSONDecodeError as e:
+            print(f"[ANALYZE:ERROR] Failed to parse JSON response: {str(e)}")
+            print(f"[ANALYZE:ERROR] Raw response: {response}")
+            # Return a default structure that won't block processing
+            return {
+                "log_level_column": None,
+                "timestamp_column": None,
+                "message_column": None,
+                "numerical_metric_columns": [],
+                "error_status_columns": []
+            }, existed
         except Exception as e:
             print(f"[ANALYZE:ERROR] Failed to analyze log structure: {str(e)}")
             # Return a default structure that won't block processing
@@ -430,16 +511,27 @@ class AgentDetector:
         }}
         """
 
+        system_message = "You are a log analysis expert. Respond with valid JSON only. Classify ALL provided log level values."
+
+
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": "You are a log analysis expert. Respond with valid JSON only. Classify ALL provided log level values."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0,
-                max_tokens=1000
-            ).choices[0].message.content.strip()
+            # CHANGED: Use Bedrock instead of OpenAI
+            response = self._call_bedrock_model(
+                prompt=prompt,
+                system_message=system_message,
+                max_tokens=1000,
+                temperature=0
+            )
+            
+            # Clean the response to extract JSON
+            response = response.strip()
+            if response.startswith("```json"):
+                response = response[7:]
+            if response.startswith("```"):
+                response = response[3:]
+            if response.endswith("```"):
+                response = response[:-3]
+            response = response.strip()
             
             classification = json.loads(response)
 
@@ -489,7 +581,7 @@ class AgentDetector:
         except Exception as e:
             print(f"[LOG_LEVEL] Error generating heuristics: {str(e)}")
             return []
-
+        
     def derive_heuristics_from_anomaly_scores(self, df, schema_id, sample_size=10):
         """
         When no log level column is found, run anomaly detection and use extreme samples
@@ -602,15 +694,12 @@ class AgentDetector:
             )
             
             # Get response from LLM
-            response = self.client.chat.completions.create(
-                model=self.heuristic_model,
-                messages=[
-                    {"role": "system", "content": system_msg},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0,
-                max_tokens=500
-            ).choices[0].message.content.strip()
+            response = self._call_bedrock_model(
+                prompt=prompt,
+                system_message=system_msg,
+                max_tokens=500,
+                temperature=0
+            )
             
             if response.lower() in {"none", "no obvious heuristic", "no heuristic found", "no rule", "no_pattern_found"}:
                 print("[HEURISTIC:ANOMALY_BASED] LLM couldn't identify a pattern from anomaly scores")
@@ -699,11 +788,11 @@ class AgentDetector:
 
             for attempt in range(max_retries):
                 try:
-                    res = self.client.chat.completions.create(
-                        model=self.model,
-                        messages=[{"role": "user", "content": prompt}],#, {"role": "system", "content": system_msg}],
+                    res = self._call_bedrock_model(
+                        prompt=prompt,
+                        max_tokens=1000,
                         temperature=0
-                    ).choices[0].message.content.strip()
+                    )
 
                     bits = [int(x.strip()) for x in res.split(",") if x.strip() in {"0", "1"}]
 
@@ -821,15 +910,12 @@ class AgentDetector:
         )
 
         try:
-            response = self.client.chat.completions.create(
-                model=self.heuristic_model,
-                messages=[
-                    {"role": "system", "content": system_msg},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0,
-                max_tokens=500
-            ).choices[0].message.content.strip()
+            response = self._call_bedrock_model(
+                prompt=prompt,
+                system_message=system_msg,
+                max_tokens=500,
+                temperature=0
+            )
 
             print(f"[TEXTUAL_HEURISTIC] LLM response: {response}")
 
@@ -1434,6 +1520,7 @@ class AgentDetector:
                 cm = confusion_matrix(y_true_ref, y_pred, labels=[1, 0])
                 prec_anom = precision_score(y_true_ref, y_pred, pos_label=0)
                 rec_anom  = recall_score(y_true_ref, y_pred, pos_label=0)
+
                 f1_anom   = f1_score(y_true_ref, y_pred, pos_label=0)
                 total_anom = sum(y_true_ref == 0)
                 found_anom = sum((y_true_ref == 0) & (y_pred == 0))

@@ -1,17 +1,4 @@
 {
-  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": [
-    {
-      "rule": {
-        "column": "Message",
-        "operator": "contains",
-        "value": "FAILED",
-        "normal_label": 0,
-        "anomaly_label": 1,
-        "source": "anomaly_score_analysis"
-      },
-      "confidence": 9
-    }
-  ],
   "06520421324f301d1dab58e626ac7b0ed41916933d9a5e6d42481313224eea24": [
     {
       "rule": {
@@ -57,6 +44,20 @@
         ]
       },
       "confidence": 4
+    }
+  ],
+  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": [
+    {
+      "rule": {
+        "column": "Message",
+        "operator": "contains",
+        "value": "FAILED",
+        "normal_label": 0,
+        "anomaly_label": 1,
+        "source": "textual_analysis",
+        "confidence_boost": 0.7
+      },
+      "confidence": 2
     }
   ]
 }

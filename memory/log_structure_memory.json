@@ -1,17 +1,4 @@
 {
-  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": {
-    "log_level_column": null,
-    "timestamp_column": "Timestamp",
-    "message_column": "Message",
-    "numerical_metric_columns": [
-      "ResponseTime_ms",
-      "MemoryUsage_MB",
-      "ThreadCount"
-    ],
-    "error_status_columns": [
-      "Message"
-    ]
-  },
   "06520421324f301d1dab58e626ac7b0ed41916933d9a5e6d42481313224eea24": {
     "log_level_column": "Level",
     "timestamp_column": null,
@@ -23,11 +10,11 @@
     ],
     "error_status_columns": [],
     "log_level_values": [
-      "CRITICAL",
-      "INFO",
-      "DEBUG",
       "ERROR",
-      "WARN"
+      "INFO",
+      "WARN",
+      "CRITICAL",
+      "DEBUG"
     ]
   },
   "5a6c194b9814b1e631f936e374d683a9f71d6f85f6dd5ce2d32c7a7f04867d38": {
@@ -35,6 +22,7 @@
     "timestamp_column": null,
     "message_column": null,
     "numerical_metric_columns": [
+      " Destination Port",
       " Flow Duration",
       " Total Fwd Packets",
       " Total Backward Packets",
@@ -64,6 +52,12 @@
       " Bwd IAT Std",
       " Bwd IAT Max",
       " Bwd IAT Min",
+      "Fwd PSH Flags",
+      " Bwd PSH Flags",
+      " Fwd URG Flags",
+      " Bwd URG Flags",
+      " Fwd Header Length",
+      " Bwd Header Length",
       "Fwd Packets/s",
       " Bwd Packets/s",
       " Min Packet Length",
@@ -107,6 +101,19 @@
       " Idle Max",
       " Idle Min"
     ],
-    "error_status_columns": null
+    "error_status_columns": []
+  },
+  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": {
+    "log_level_column": null,
+    "timestamp_column": null,
+    "message_column": "Message",
+    "numerical_metric_columns": [
+      "ResponseTime_ms",
+      "MemoryUsage_MB",
+      "ThreadCount"
+    ],
+    "error_status_columns": [
+      "RequestID"
+    ]
   }
 }
