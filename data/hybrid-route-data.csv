@@ -1,0 +1,501 @@
+LineId,Timestamp,Component,Operation,ResponseTime_ms,MemoryUsage_MB,ThreadCount,RequestID,Message
+1,2025-07-23 15:06:50,Queue,UpdateUser,231,269,14,REQ-23104,REQ-23104 UpdateUser executed successfully on Queue
+2,2025-07-23 12:42:50,Database,CacheData,265,353,11,REQ-58520,REQ-58520 Database CacheData - no issues detected
+3,2025-07-23 15:13:20,WebAPI,ProcessOrder,140,265,14,REQ-67433,WebAPI completed ProcessOrder with normal performance
+4,2025-07-23 13:23:50,WebAPI,CacheData,223,219,12,REQ-30730,REQ-30730 WebAPI CacheData - no issues detected
+5,2025-07-23 12:58:20,WebAPI,RunJob,222,280,17,REQ-51245,WebAPI service processed RunJob request
+6,2025-07-23 15:23:20,Scheduler,RunJob,172,326,11,REQ-89276,Scheduler service processed RunJob request
+7,2025-07-23 15:14:50,Database,SendNotification,233,276,9,REQ-90173,REQ-90173 SendNotification executed successfully on Database
+8,2025-07-23 13:08:20,WebAPI,RunJob,321,256,11,REQ-28131,WebAPI completed RunJob with normal performance
+9,2025-07-23 12:40:20,Queue,RunJob,243,246,14,REQ-46434,REQ-46434 Queue RunJob - no issues detected
+10,2025-07-23 15:51:20,Database,UpdateUser,2607,626,32,REQ-80236,FAILED: Database connection lost during UpdateUser
+11,2025-07-23 12:10:50,Scheduler,CacheData,190,331,7,REQ-81482,REQ-81482 CacheData executed successfully on Scheduler
+12,2025-07-23 13:43:20,Queue,RunJob,171,250,11,REQ-72296,REQ-72296 RunJob executed successfully on Queue
+13,2025-07-23 15:29:20,WebAPI,CacheData,220,154,9,REQ-65518,REQ-65518 CacheData executed successfully on WebAPI
+14,2025-07-23 12:48:20,WebAPI,CacheData,230,184,13,REQ-80010,"Operation CacheData finished, WebAPI status: healthy"
+15,2025-07-23 15:11:50,Queue,SendNotification,209,295,15,REQ-58434,"Operation SendNotification finished, Queue status: healthy"
+16,2025-07-23 15:20:20,WebAPI,CacheData,256,299,12,REQ-25129,WebAPI CacheData completed in 256ms
+17,2025-07-23 16:13:50,Queue,UpdateUser,1203,337,8,REQ-85631,Queue UpdateUser completed
+18,2025-07-23 12:21:20,Cache,ProcessOrder,234,221,15,REQ-10851,Cache service processed ProcessOrder request
+19,2025-07-23 14:44:20,Cache,UpdateUser,231,278,9,REQ-75909,REQ-75909 Cache UpdateUser - no issues detected
+20,2025-07-23 15:30:20,Scheduler,ProcessOrder,141,209,16,REQ-15778,"Operation ProcessOrder finished, Scheduler status: healthy"
+21,2025-07-23 16:11:20,Cache,RunJob,588,501,22,REQ-24953,Cache RunJob executed normally
+22,2025-07-23 16:11:50,Scheduler,UpdateUser,593,641,17,REQ-18564,Scheduler UpdateUser executed normally
+23,2025-07-23 14:26:20,Database,RunJob,232,259,13,REQ-95477,Database service processed RunJob request
+24,2025-07-23 15:04:20,Queue,CacheData,209,391,11,REQ-19508,"Operation CacheData finished, Queue status: healthy"
+25,2025-07-23 12:44:20,WebAPI,RunJob,220,247,19,REQ-97841,WebAPI service processed RunJob request
+26,2025-07-23 15:56:50,Cache,CacheData,2128,1096,22,REQ-35443,FAILED: Unable to complete CacheData on Cache
+27,2025-07-23 16:14:50,WebAPI,RunJob,212,919,10,REQ-99974,WebAPI RunJob processed successfully
+28,2025-07-23 13:51:50,Queue,UpdateUser,260,435,12,REQ-69177,REQ-69177 UpdateUser executed successfully on Queue
+29,2025-07-23 12:56:50,WebAPI,UpdateUser,245,290,7,REQ-18675,"Operation UpdateUser finished, WebAPI status: healthy"
+30,2025-07-23 14:53:20,Queue,RunJob,154,275,4,REQ-15209,REQ-15209 RunJob executed successfully on Queue
+31,2025-07-23 16:03:50,Database,SendNotification,400,415,21,REQ-26551,Database SendNotification executed normally
+32,2025-07-23 14:54:20,WebAPI,UpdateUser,188,339,18,REQ-20745,REQ-20745 WebAPI UpdateUser - no issues detected
+33,2025-07-23 15:46:20,WebAPI,UpdateUser,126,349,9,REQ-23473,WebAPI service processed UpdateUser request
+34,2025-07-23 13:32:50,Queue,SendNotification,216,310,9,REQ-79514,Queue completed SendNotification with normal performance
+35,2025-07-23 12:07:20,Cache,RunJob,189,312,12,REQ-13278,REQ-13278 Cache RunJob - no issues detected
+36,2025-07-23 14:52:50,Scheduler,CacheData,189,295,12,REQ-87924,REQ-87924 Scheduler CacheData - no issues detected
+37,2025-07-23 15:30:50,Queue,CacheData,328,283,13,REQ-10464,"Operation CacheData finished, Queue status: healthy"
+38,2025-07-23 12:41:20,WebAPI,SendNotification,156,396,17,REQ-93320,WebAPI service processed SendNotification request
+39,2025-07-23 13:50:50,Queue,CacheData,194,163,15,REQ-67422,"Operation CacheData finished, Queue status: healthy"
+40,2025-07-23 12:37:50,Database,SendNotification,165,376,14,REQ-47930,Database completed SendNotification with normal performance
+41,2025-07-23 15:18:20,Scheduler,RunJob,301,228,8,REQ-96951,Scheduler completed RunJob with normal performance
+42,2025-07-23 12:52:50,Cache,SendNotification,198,221,14,REQ-99733,REQ-99733 Cache SendNotification - no issues detected
+43,2025-07-23 16:08:50,Queue,CacheData,1139,308,10,REQ-54657,Queue CacheData completed
+44,2025-07-23 13:38:50,Queue,ProcessOrder,231,271,18,REQ-84364,"Operation ProcessOrder finished, Queue status: healthy"
+45,2025-07-23 12:22:50,WebAPI,RunJob,271,485,11,REQ-54597,"Operation RunJob finished, WebAPI status: healthy"
+46,2025-07-23 12:44:50,Queue,ProcessOrder,180,202,10,REQ-44993,REQ-44993 Queue ProcessOrder - no issues detected
+47,2025-07-23 12:06:20,Queue,CacheData,319,306,10,REQ-93810,Queue CacheData completed in 319ms
+48,2025-07-23 12:11:50,Cache,UpdateUser,224,378,13,REQ-87397,Cache UpdateUser completed in 224ms
+49,2025-07-23 15:33:50,Scheduler,RunJob,201,373,8,REQ-67912,REQ-67912 Scheduler RunJob - no issues detected
+50,2025-07-23 12:17:20,Queue,UpdateUser,288,442,8,REQ-36062,Queue UpdateUser completed in 288ms
+51,2025-07-23 12:42:20,Scheduler,SendNotification,169,408,11,REQ-31319,Scheduler SendNotification completed in 169ms
+52,2025-07-23 13:37:20,WebAPI,SendNotification,147,307,16,REQ-41385,"Operation SendNotification finished, WebAPI status: healthy"
+53,2025-07-23 13:11:50,Scheduler,RunJob,188,310,18,REQ-92240,REQ-92240 Scheduler RunJob - no issues detected
+54,2025-07-23 15:31:20,Database,ProcessOrder,139,292,11,REQ-53719,Database completed ProcessOrder with normal performance
+55,2025-07-23 13:42:50,Database,CacheData,71,346,8,REQ-96474,REQ-96474 Database CacheData - no issues detected
+56,2025-07-23 12:33:50,WebAPI,ProcessOrder,209,218,14,REQ-91070,WebAPI completed ProcessOrder with normal performance
+57,2025-07-23 13:20:20,Database,RunJob,200,354,8,REQ-80381,REQ-80381 Database RunJob - no issues detected
+58,2025-07-23 12:15:20,WebAPI,ProcessOrder,186,401,17,REQ-76237,WebAPI service processed ProcessOrder request
+59,2025-07-23 13:48:20,Queue,RunJob,183,265,3,REQ-50857,Queue completed RunJob with normal performance
+60,2025-07-23 12:45:20,Queue,RunJob,138,403,11,REQ-99593,Queue RunJob completed in 138ms
+61,2025-07-23 16:13:20,Cache,CacheData,188,311,42,REQ-19710,Cache CacheData finished successfully
+62,2025-07-23 14:17:20,Scheduler,UpdateUser,245,329,16,REQ-54473,Scheduler completed UpdateUser with normal performance
+63,2025-07-23 14:47:50,WebAPI,UpdateUser,247,457,10,REQ-18981,WebAPI service processed UpdateUser request
+64,2025-07-23 16:07:50,WebAPI,ProcessOrder,915,614,22,REQ-72746,WebAPI ProcessOrder executed normally
+65,2025-07-23 12:45:50,Queue,RunJob,145,392,12,REQ-94939,REQ-94939 Queue RunJob - no issues detected
+66,2025-07-23 12:25:50,Database,UpdateUser,252,274,10,REQ-22156,Database service processed UpdateUser request
+67,2025-07-23 15:51:50,Scheduler,SendNotification,2070,1041,17,REQ-34267,FAILED: SendNotification on Scheduler - insufficient resources
+68,2025-07-23 12:29:20,Database,CacheData,197,357,9,REQ-15695,"Operation CacheData finished, Database status: healthy"
+69,2025-07-23 14:05:20,Scheduler,ProcessOrder,156,220,12,REQ-80678,REQ-80678 Scheduler ProcessOrder - no issues detected
+70,2025-07-23 15:21:50,Scheduler,RunJob,138,272,14,REQ-30374,REQ-30374 RunJob executed successfully on Scheduler
+71,2025-07-23 15:02:20,WebAPI,SendNotification,176,257,12,REQ-94607,WebAPI SendNotification completed in 176ms
+72,2025-07-23 14:56:50,Queue,RunJob,251,286,9,REQ-78522,Queue completed RunJob with normal performance
+73,2025-07-23 14:24:50,Cache,UpdateUser,249,309,11,REQ-82132,Cache service processed UpdateUser request
+74,2025-07-23 14:31:20,Cache,UpdateUser,106,348,11,REQ-62565,REQ-62565 UpdateUser executed successfully on Cache
+75,2025-07-23 14:44:50,Database,RunJob,322,272,10,REQ-79615,Database RunJob completed in 322ms
+76,2025-07-23 14:38:20,Cache,CacheData,195,326,7,REQ-34890,REQ-34890 Cache CacheData - no issues detected
+77,2025-07-23 14:20:20,Scheduler,UpdateUser,272,234,10,REQ-68800,REQ-68800 UpdateUser executed successfully on Scheduler
+78,2025-07-23 12:40:50,Queue,CacheData,153,291,11,REQ-69429,REQ-69429 CacheData executed successfully on Queue
+79,2025-07-23 15:53:50,Scheduler,UpdateUser,2392,1145,28,REQ-46241,FAILED: Scheduler connection lost during UpdateUser
+80,2025-07-23 15:58:50,Cache,ProcessOrder,1891,583,19,REQ-33519,FAILED: ProcessOrder on Cache - insufficient resources
+81,2025-07-23 13:23:20,Cache,CacheData,234,358,13,REQ-66985,REQ-66985 Cache CacheData - no issues detected
+82,2025-07-23 12:47:20,Scheduler,UpdateUser,269,325,13,REQ-93227,Scheduler service processed UpdateUser request
+83,2025-07-23 16:04:50,Database,CacheData,1578,288,6,REQ-74340,Database CacheData completed
+84,2025-07-23 13:32:20,Database,SendNotification,199,202,11,REQ-80697,Database completed SendNotification with normal performance
+85,2025-07-23 14:46:50,Database,ProcessOrder,199,307,15,REQ-20500,Database completed ProcessOrder with normal performance
+86,2025-07-23 12:51:20,Cache,ProcessOrder,196,335,10,REQ-93886,REQ-93886 ProcessOrder executed successfully on Cache
+87,2025-07-23 13:36:20,WebAPI,RunJob,230,283,9,REQ-57576,"Operation RunJob finished, WebAPI status: healthy"
+88,2025-07-23 15:33:20,WebAPI,CacheData,181,347,13,REQ-31178,REQ-31178 WebAPI CacheData - no issues detected
+89,2025-07-23 14:42:20,Database,RunJob,225,388,12,REQ-17492,REQ-17492 RunJob executed successfully on Database
+90,2025-07-23 14:25:20,Cache,CacheData,212,306,10,REQ-22833,Cache service processed CacheData request
+91,2025-07-23 15:16:50,Scheduler,CacheData,248,228,15,REQ-97538,REQ-97538 CacheData executed successfully on Scheduler
+92,2025-07-23 16:02:20,WebAPI,UpdateUser,176,1462,12,REQ-17146,WebAPI UpdateUser processed successfully
+93,2025-07-23 15:07:20,Queue,ProcessOrder,278,357,14,REQ-19602,"Operation ProcessOrder finished, Queue status: healthy"
+94,2025-07-23 14:48:20,WebAPI,UpdateUser,268,354,9,REQ-87992,WebAPI completed UpdateUser with normal performance
+95,2025-07-23 15:41:50,WebAPI,RunJob,141,314,10,REQ-15482,WebAPI completed RunJob with normal performance
+96,2025-07-23 14:59:50,WebAPI,UpdateUser,231,211,7,REQ-41285,WebAPI service processed UpdateUser request
+97,2025-07-23 12:49:20,WebAPI,CacheData,154,417,5,REQ-31417,"Operation CacheData finished, WebAPI status: healthy"
+98,2025-07-23 12:43:50,Database,SendNotification,175,257,12,REQ-37460,Database completed SendNotification with normal performance
+99,2025-07-23 15:45:20,Queue,UpdateUser,183,239,12,REQ-42706,REQ-42706 Queue UpdateUser - no issues detected
+100,2025-07-23 12:13:50,Database,UpdateUser,222,370,10,REQ-22280,REQ-22280 UpdateUser executed successfully on Database
+101,2025-07-23 14:10:50,Cache,UpdateUser,173,268,18,REQ-96374,Cache service processed UpdateUser request
+102,2025-07-23 15:42:50,Cache,CacheData,280,247,11,REQ-57795,"Operation CacheData finished, Cache status: healthy"
+103,2025-07-23 12:15:50,Queue,SendNotification,230,272,12,REQ-88907,Queue service processed SendNotification request
+104,2025-07-23 14:47:20,Database,SendNotification,195,256,10,REQ-34356,Database SendNotification completed in 195ms
+105,2025-07-23 14:52:20,WebAPI,ProcessOrder,225,293,11,REQ-85880,REQ-85880 WebAPI ProcessOrder - no issues detected
+106,2025-07-23 12:34:20,Queue,SendNotification,71,259,11,REQ-57400,REQ-57400 SendNotification executed successfully on Queue
+107,2025-07-23 14:36:50,Scheduler,SendNotification,202,203,18,REQ-96752,REQ-96752 SendNotification executed successfully on Scheduler
+108,2025-07-23 14:00:50,Queue,RunJob,110,284,8,REQ-14117,"Operation RunJob finished, Queue status: healthy"
+109,2025-07-23 14:51:50,Database,ProcessOrder,198,96,10,REQ-42271,Database completed ProcessOrder with normal performance
+110,2025-07-23 13:12:20,Queue,ProcessOrder,158,275,8,REQ-30969,Queue service processed ProcessOrder request
+111,2025-07-23 13:14:50,Database,ProcessOrder,91,359,9,REQ-60432,Database ProcessOrder completed in 91ms
+112,2025-07-23 15:37:50,Database,SendNotification,215,193,12,REQ-81511,REQ-81511 Database SendNotification - no issues detected
+113,2025-07-23 14:53:50,Database,ProcessOrder,248,318,7,REQ-91183,Database ProcessOrder completed in 248ms
+114,2025-07-23 12:18:50,Cache,RunJob,240,178,6,REQ-64987,"Operation RunJob finished, Cache status: healthy"
+115,2025-07-23 15:58:20,Scheduler,CacheData,2212,1243,17,REQ-57301,FAILED: Scheduler connection lost during CacheData
+116,2025-07-23 14:26:50,Scheduler,RunJob,191,331,14,REQ-80855,"Operation RunJob finished, Scheduler status: healthy"
+117,2025-07-23 14:09:50,WebAPI,UpdateUser,180,181,13,REQ-22363,WebAPI UpdateUser completed in 180ms
+118,2025-07-23 14:04:50,Queue,ProcessOrder,250,261,10,REQ-38080,REQ-38080 Queue ProcessOrder - no issues detected
+119,2025-07-23 13:04:50,Cache,RunJob,93,317,10,REQ-44438,Cache completed RunJob with normal performance
+120,2025-07-23 12:27:20,Queue,SendNotification,248,383,15,REQ-57052,Queue service processed SendNotification request
+121,2025-07-23 13:56:20,Database,CacheData,214,248,8,REQ-40161,"Operation CacheData finished, Database status: healthy"
+122,2025-07-23 13:34:20,Cache,SendNotification,285,397,12,REQ-52487,"Operation SendNotification finished, Cache status: healthy"
+123,2025-07-23 14:46:20,Database,RunJob,208,342,16,REQ-76562,Database RunJob completed in 208ms
+124,2025-07-23 13:22:50,WebAPI,SendNotification,164,356,10,REQ-48469,REQ-48469 SendNotification executed successfully on WebAPI
+125,2025-07-23 14:01:50,WebAPI,RunJob,280,278,11,REQ-19287,WebAPI RunJob completed in 280ms
+126,2025-07-23 13:59:50,Database,CacheData,182,325,12,REQ-40007,Database CacheData completed in 182ms
+127,2025-07-23 15:34:50,Database,RunJob,246,305,13,REQ-66057,"Operation RunJob finished, Database status: healthy"
+128,2025-07-23 13:47:50,WebAPI,RunJob,189,246,7,REQ-36365,WebAPI service processed RunJob request
+129,2025-07-23 13:09:20,Scheduler,UpdateUser,171,348,15,REQ-74686,REQ-74686 Scheduler UpdateUser - no issues detected
+130,2025-07-23 14:50:50,Database,ProcessOrder,164,321,7,REQ-25713,REQ-25713 ProcessOrder executed successfully on Database
+131,2025-07-23 12:21:50,Queue,SendNotification,83,371,12,REQ-30926,REQ-30926 Queue SendNotification - no issues detected
+132,2025-07-23 13:02:50,Cache,SendNotification,119,152,16,REQ-28301,"Operation SendNotification finished, Cache status: healthy"
+133,2025-07-23 16:01:20,Cache,RunJob,1882,238,9,REQ-45954,Cache RunJob completed
+134,2025-07-23 14:21:50,WebAPI,CacheData,269,288,10,REQ-34050,WebAPI CacheData completed in 269ms
+135,2025-07-23 13:16:20,WebAPI,ProcessOrder,328,320,11,REQ-71348,WebAPI completed ProcessOrder with normal performance
+136,2025-07-23 12:34:50,Database,SendNotification,180,162,15,REQ-85674,Database service processed SendNotification request
+137,2025-07-23 13:42:20,Queue,RunJob,196,303,5,REQ-26828,"Operation RunJob finished, Queue status: healthy"
+138,2025-07-23 12:18:20,WebAPI,CacheData,212,278,9,REQ-81426,REQ-81426 CacheData executed successfully on WebAPI
+139,2025-07-23 12:14:50,Scheduler,CacheData,135,389,14,REQ-40495,"Operation CacheData finished, Scheduler status: healthy"
+140,2025-07-23 14:18:50,WebAPI,SendNotification,197,263,12,REQ-35112,WebAPI SendNotification completed in 197ms
+141,2025-07-23 12:39:20,Database,UpdateUser,238,257,10,REQ-23238,REQ-23238 Database UpdateUser - no issues detected
+142,2025-07-23 13:50:20,Queue,ProcessOrder,218,328,7,REQ-58944,REQ-58944 ProcessOrder executed successfully on Queue
+143,2025-07-23 16:05:50,Scheduler,SendNotification,581,492,24,REQ-11607,Scheduler SendNotification executed normally
+144,2025-07-23 12:53:20,WebAPI,ProcessOrder,177,384,9,REQ-52504,"Operation ProcessOrder finished, WebAPI status: healthy"
+145,2025-07-23 14:12:50,Cache,SendNotification,170,315,13,REQ-63883,REQ-63883 Cache SendNotification - no issues detected
+146,2025-07-23 14:19:20,Queue,UpdateUser,73,337,12,REQ-34931,REQ-34931 Queue UpdateUser - no issues detected
+147,2025-07-23 12:17:50,WebAPI,RunJob,180,274,11,REQ-95181,REQ-95181 WebAPI RunJob - no issues detected
+148,2025-07-23 13:57:20,Cache,RunJob,214,341,9,REQ-38864,REQ-38864 RunJob executed successfully on Cache
+149,2025-07-23 14:16:50,Cache,RunJob,264,424,8,REQ-62772,Cache completed RunJob with normal performance
+150,2025-07-23 15:39:20,WebAPI,ProcessOrder,244,292,12,REQ-86350,REQ-86350 WebAPI ProcessOrder - no issues detected
+151,2025-07-23 12:08:50,Database,UpdateUser,232,391,11,REQ-39256,REQ-39256 Database UpdateUser - no issues detected
+152,2025-07-23 13:04:20,Database,CacheData,177,172,10,REQ-80644,REQ-80644 CacheData executed successfully on Database
+153,2025-07-23 12:28:50,WebAPI,ProcessOrder,178,394,15,REQ-44671,WebAPI completed ProcessOrder with normal performance
+154,2025-07-23 12:14:20,Queue,UpdateUser,232,293,9,REQ-38657,REQ-38657 UpdateUser executed successfully on Queue
+155,2025-07-23 15:57:20,WebAPI,ProcessOrder,2299,630,24,REQ-48829,FAILED: ProcessOrder on WebAPI - insufficient resources
+156,2025-07-23 15:04:50,Scheduler,CacheData,192,380,10,REQ-11220,Scheduler service processed CacheData request
+157,2025-07-23 12:07:50,Scheduler,RunJob,207,352,13,REQ-46048,Scheduler service processed RunJob request
+158,2025-07-23 13:55:20,WebAPI,UpdateUser,197,319,13,REQ-87110,WebAPI completed UpdateUser with normal performance
+159,2025-07-23 15:28:50,Scheduler,SendNotification,232,330,13,REQ-93136,Scheduler SendNotification completed in 232ms
+160,2025-07-23 12:36:20,Database,CacheData,235,271,16,REQ-16006,"Operation CacheData finished, Database status: healthy"
+161,2025-07-23 13:01:20,WebAPI,ProcessOrder,171,402,14,REQ-70142,REQ-70142 WebAPI ProcessOrder - no issues detected
+162,2025-07-23 14:45:20,Database,RunJob,205,267,16,REQ-30635,REQ-30635 RunJob executed successfully on Database
+163,2025-07-23 15:40:20,Scheduler,RunJob,214,301,6,REQ-29410,Scheduler service processed RunJob request
+164,2025-07-23 12:20:50,Queue,RunJob,249,295,12,REQ-46463,Queue service processed RunJob request
+165,2025-07-23 15:44:50,Cache,RunJob,242,277,5,REQ-99399,Cache service processed RunJob request
+166,2025-07-23 16:01:50,Scheduler,CacheData,256,289,36,REQ-15965,Scheduler CacheData finished successfully
+167,2025-07-23 12:19:20,Cache,SendNotification,83,334,14,REQ-38893,Cache service processed SendNotification request
+168,2025-07-23 12:09:50,Cache,CacheData,192,289,10,REQ-23434,REQ-23434 CacheData executed successfully on Cache
+169,2025-07-23 15:52:50,Database,CacheData,2156,1107,21,REQ-38361,ERROR: CacheData failed on Database - retrying
+170,2025-07-23 13:00:20,Cache,ProcessOrder,205,262,7,REQ-61856,Cache completed ProcessOrder with normal performance
+171,2025-07-23 12:24:50,Scheduler,CacheData,225,215,13,REQ-54118,Scheduler CacheData completed in 225ms
+172,2025-07-23 13:24:50,Scheduler,ProcessOrder,247,212,7,REQ-10425,Scheduler ProcessOrder completed in 247ms
+173,2025-07-23 16:10:50,Database,RunJob,150,942,15,REQ-72616,Database RunJob processed successfully
+174,2025-07-23 13:05:20,WebAPI,SendNotification,128,236,14,REQ-86622,"Operation SendNotification finished, WebAPI status: healthy"
+175,2025-07-23 13:03:20,WebAPI,SendNotification,267,207,12,REQ-42325,"Operation SendNotification finished, WebAPI status: healthy"
+176,2025-07-23 13:33:50,Database,UpdateUser,132,268,11,REQ-88504,Database service processed UpdateUser request
+177,2025-07-23 15:12:50,Cache,CacheData,188,293,9,REQ-30676,REQ-30676 Cache CacheData - no issues detected
+178,2025-07-23 13:36:50,Cache,ProcessOrder,139,375,13,REQ-50306,Cache completed ProcessOrder with normal performance
+179,2025-07-23 13:18:20,Queue,SendNotification,207,284,11,REQ-11504,REQ-11504 Queue SendNotification - no issues detected
+180,2025-07-23 15:10:50,Scheduler,SendNotification,207,169,8,REQ-19016,Scheduler completed SendNotification with normal performance
+181,2025-07-23 15:21:20,WebAPI,RunJob,194,258,13,REQ-82512,WebAPI service processed RunJob request
+182,2025-07-23 13:43:50,Cache,UpdateUser,215,309,9,REQ-82063,Cache service processed UpdateUser request
+183,2025-07-23 15:28:20,Queue,SendNotification,160,335,7,REQ-22097,REQ-22097 SendNotification executed successfully on Queue
+184,2025-07-23 14:23:50,Cache,ProcessOrder,236,262,10,REQ-19880,REQ-19880 ProcessOrder executed successfully on Cache
+185,2025-07-23 15:53:20,WebAPI,CacheData,2480,574,35,REQ-73464,ERROR: WebAPI CacheData failed with timeout
+186,2025-07-23 13:16:50,Scheduler,ProcessOrder,207,233,14,REQ-79352,Scheduler ProcessOrder completed in 207ms
+187,2025-07-23 15:08:50,Scheduler,SendNotification,169,340,9,REQ-76307,Scheduler completed SendNotification with normal performance
+188,2025-07-23 12:39:50,Database,RunJob,210,291,8,REQ-59823,REQ-59823 Database RunJob - no issues detected
+189,2025-07-23 13:51:20,Cache,RunJob,188,314,19,REQ-77839,REQ-77839 Cache RunJob - no issues detected
+190,2025-07-23 13:30:20,WebAPI,SendNotification,181,376,16,REQ-36071,"Operation SendNotification finished, WebAPI status: healthy"
+191,2025-07-23 16:12:50,Scheduler,CacheData,200,254,36,REQ-74454,Scheduler CacheData finished successfully
+192,2025-07-23 15:13:50,Cache,RunJob,180,276,12,REQ-81200,Cache service processed RunJob request
+193,2025-07-23 15:26:20,Cache,CacheData,107,288,9,REQ-76244,Cache service processed CacheData request
+194,2025-07-23 14:22:20,WebAPI,UpdateUser,261,291,9,REQ-46509,WebAPI service processed UpdateUser request
+195,2025-07-23 13:00:50,Cache,SendNotification,256,267,3,REQ-94259,Cache completed SendNotification with normal performance
+196,2025-07-23 14:10:20,Queue,UpdateUser,205,362,8,REQ-22704,"Operation UpdateUser finished, Queue status: healthy"
+197,2025-07-23 13:18:50,Queue,RunJob,248,269,19,REQ-99166,Queue completed RunJob with normal performance
+198,2025-07-23 12:52:20,Cache,UpdateUser,242,255,14,REQ-38785,"Operation UpdateUser finished, Cache status: healthy"
+199,2025-07-23 13:22:20,WebAPI,RunJob,211,280,12,REQ-24621,REQ-24621 RunJob executed successfully on WebAPI
+200,2025-07-23 15:09:50,Cache,ProcessOrder,170,236,13,REQ-27361,Cache service processed ProcessOrder request
+201,2025-07-23 15:59:50,Database,UpdateUser,2213,575,23,REQ-11854,TIMEOUT: Database UpdateUser exceeded deadline
+202,2025-07-23 12:47:50,Scheduler,RunJob,165,282,9,REQ-32431,REQ-32431 Scheduler RunJob - no issues detected
+203,2025-07-23 14:08:50,Cache,UpdateUser,251,355,11,REQ-63354,"Operation UpdateUser finished, Cache status: healthy"
+204,2025-07-23 13:28:50,Database,CacheData,250,297,11,REQ-93748,Database completed CacheData with normal performance
+205,2025-07-23 13:27:50,WebAPI,CacheData,195,434,10,REQ-91959,"Operation CacheData finished, WebAPI status: healthy"
+206,2025-07-23 13:45:50,Queue,UpdateUser,154,303,9,REQ-89507,Queue service processed UpdateUser request
+207,2025-07-23 14:00:20,Cache,RunJob,147,231,10,REQ-18834,Cache completed RunJob with normal performance
+208,2025-07-23 12:43:20,Scheduler,RunJob,168,316,11,REQ-56566,Scheduler service processed RunJob request
+209,2025-07-23 16:05:20,Cache,ProcessOrder,178,308,38,REQ-23446,Cache ProcessOrder finished successfully
+210,2025-07-23 15:05:20,WebAPI,ProcessOrder,197,256,16,REQ-70068,REQ-70068 WebAPI ProcessOrder - no issues detected
+211,2025-07-23 14:11:20,WebAPI,CacheData,102,201,16,REQ-66498,REQ-66498 WebAPI CacheData - no issues detected
+212,2025-07-23 13:05:50,Database,CacheData,273,305,11,REQ-66155,REQ-66155 Database CacheData - no issues detected
+213,2025-07-23 14:41:20,WebAPI,CacheData,179,353,11,REQ-17989,WebAPI service processed CacheData request
+214,2025-07-23 14:35:50,WebAPI,CacheData,240,228,14,REQ-65444,WebAPI completed CacheData with normal performance
+215,2025-07-23 14:13:50,Cache,SendNotification,192,221,12,REQ-17100,"Operation SendNotification finished, Cache status: healthy"
+216,2025-07-23 15:03:20,Database,UpdateUser,215,332,12,REQ-69929,"Operation UpdateUser finished, Database status: healthy"
+217,2025-07-23 15:25:50,Database,CacheData,182,256,10,REQ-44600,REQ-44600 Database CacheData - no issues detected
+218,2025-07-23 13:58:50,WebAPI,RunJob,147,334,13,REQ-92719,WebAPI completed RunJob with normal performance
+219,2025-07-23 15:02:50,Queue,RunJob,152,351,15,REQ-49321,"Operation RunJob finished, Queue status: healthy"
+220,2025-07-23 14:03:20,WebAPI,CacheData,184,267,8,REQ-46500,"Operation CacheData finished, WebAPI status: healthy"
+221,2025-07-23 15:17:20,WebAPI,UpdateUser,165,356,12,REQ-82692,"Operation UpdateUser finished, WebAPI status: healthy"
+222,2025-07-23 14:23:20,Cache,ProcessOrder,67,182,15,REQ-42742,Cache service processed ProcessOrder request
+223,2025-07-23 12:24:20,Cache,ProcessOrder,155,275,13,REQ-38221,Cache service processed ProcessOrder request
+224,2025-07-23 13:44:20,Cache,CacheData,178,256,10,REQ-31643,"Operation CacheData finished, Cache status: healthy"
+225,2025-07-23 13:15:50,Scheduler,ProcessOrder,168,356,12,REQ-88104,"Operation ProcessOrder finished, Scheduler status: healthy"
+226,2025-07-23 15:08:20,Queue,UpdateUser,160,352,15,REQ-37938,REQ-37938 Queue UpdateUser - no issues detected
+227,2025-07-23 14:08:20,Cache,ProcessOrder,267,400,14,REQ-71993,Cache service processed ProcessOrder request
+228,2025-07-23 15:45:50,WebAPI,SendNotification,202,295,11,REQ-97416,"Operation SendNotification finished, WebAPI status: healthy"
+229,2025-07-23 14:29:20,Queue,ProcessOrder,159,254,9,REQ-63269,REQ-63269 Queue ProcessOrder - no issues detected
+230,2025-07-23 12:35:50,Database,ProcessOrder,299,337,12,REQ-19116,REQ-19116 Database ProcessOrder - no issues detected
+231,2025-07-23 13:01:50,Cache,ProcessOrder,154,346,11,REQ-28726,Cache service processed ProcessOrder request
+232,2025-07-23 12:50:50,Cache,SendNotification,187,231,10,REQ-45382,Cache completed SendNotification with normal performance
+233,2025-07-23 15:44:20,Database,UpdateUser,246,253,10,REQ-37535,Database service processed UpdateUser request
+234,2025-07-23 12:09:20,Cache,RunJob,234,322,14,REQ-28289,REQ-28289 Cache RunJob - no issues detected
+235,2025-07-23 15:06:20,Queue,SendNotification,172,264,13,REQ-83792,REQ-83792 Queue SendNotification - no issues detected
+236,2025-07-23 14:59:20,Cache,RunJob,220,295,4,REQ-51180,REQ-51180 Cache RunJob - no issues detected
+237,2025-07-23 14:55:20,Scheduler,ProcessOrder,227,277,4,REQ-96163,REQ-96163 Scheduler ProcessOrder - no issues detected
+238,2025-07-23 13:25:20,WebAPI,UpdateUser,211,370,16,REQ-44522,"Operation UpdateUser finished, WebAPI status: healthy"
+239,2025-07-23 13:21:20,WebAPI,CacheData,115,278,10,REQ-94012,"Operation CacheData finished, WebAPI status: healthy"
+240,2025-07-23 13:34:50,WebAPI,UpdateUser,204,319,15,REQ-74042,WebAPI completed UpdateUser with normal performance
+241,2025-07-23 15:22:50,WebAPI,ProcessOrder,258,225,16,REQ-46930,REQ-46930 ProcessOrder executed successfully on WebAPI
+242,2025-07-23 13:38:20,Database,ProcessOrder,214,226,17,REQ-41571,REQ-41571 Database ProcessOrder - no issues detected
+243,2025-07-23 15:50:50,Database,CacheData,227,358,15,REQ-64040,REQ-64040 Database CacheData - no issues detected
+244,2025-07-23 12:11:20,Queue,ProcessOrder,228,331,8,REQ-21395,REQ-21395 Queue ProcessOrder - no issues detected
+245,2025-07-23 15:16:20,Database,SendNotification,237,327,15,REQ-11025,"Operation SendNotification finished, Database status: healthy"
+246,2025-07-23 12:57:50,Database,RunJob,167,438,17,REQ-84341,Database RunJob completed in 167ms
+247,2025-07-23 12:46:50,WebAPI,UpdateUser,132,266,7,REQ-89840,WebAPI completed UpdateUser with normal performance
+248,2025-07-23 12:25:20,WebAPI,SendNotification,199,328,9,REQ-23396,WebAPI SendNotification completed in 199ms
+249,2025-07-23 14:43:20,Database,UpdateUser,204,406,8,REQ-86569,Database completed UpdateUser with normal performance
+250,2025-07-23 13:29:50,Cache,UpdateUser,262,318,13,REQ-89818,Cache UpdateUser completed in 262ms
+251,2025-07-23 16:00:50,Queue,CacheData,1893,912,21,REQ-26591,TIMEOUT: Queue CacheData exceeded deadline
+252,2025-07-23 14:34:20,Scheduler,CacheData,187,259,13,REQ-44760,REQ-44760 CacheData executed successfully on Scheduler
+253,2025-07-23 16:03:20,Queue,CacheData,590,698,26,REQ-48290,Queue CacheData executed normally
+254,2025-07-23 13:45:20,Scheduler,ProcessOrder,245,236,11,REQ-79163,REQ-79163 Scheduler ProcessOrder - no issues detected
+255,2025-07-23 14:34:50,Cache,CacheData,155,229,16,REQ-69638,REQ-69638 CacheData executed successfully on Cache
+256,2025-07-23 15:34:20,Database,SendNotification,167,292,11,REQ-82309,"Operation SendNotification finished, Database status: healthy"
+257,2025-07-23 13:19:20,Queue,RunJob,243,318,9,REQ-25014,REQ-25014 RunJob executed successfully on Queue
+258,2025-07-23 15:22:20,Scheduler,ProcessOrder,204,343,4,REQ-45697,"Operation ProcessOrder finished, Scheduler status: healthy"
+259,2025-07-23 13:19:50,Cache,RunJob,231,252,13,REQ-99353,REQ-99353 Cache RunJob - no issues detected
+260,2025-07-23 15:49:50,WebAPI,ProcessOrder,144,253,9,REQ-31299,WebAPI service processed ProcessOrder request
+261,2025-07-23 14:29:50,Scheduler,SendNotification,189,347,18,REQ-73653,Scheduler completed SendNotification with normal performance
+262,2025-07-23 13:07:50,Cache,CacheData,149,274,9,REQ-38746,Cache service processed CacheData request
+263,2025-07-23 15:10:20,Queue,RunJob,150,322,14,REQ-55745,Queue completed RunJob with normal performance
+264,2025-07-23 12:54:20,Scheduler,RunJob,190,330,11,REQ-40021,REQ-40021 Scheduler RunJob - no issues detected
+265,2025-07-23 13:17:50,Queue,UpdateUser,105,276,13,REQ-82512,"Operation UpdateUser finished, Queue status: healthy"
+266,2025-07-23 14:05:50,Scheduler,CacheData,202,345,15,REQ-27342,Scheduler completed CacheData with normal performance
+267,2025-07-23 15:47:20,Cache,UpdateUser,259,441,8,REQ-83385,Cache service processed UpdateUser request
+268,2025-07-23 12:54:50,Database,UpdateUser,215,170,18,REQ-14207,REQ-14207 UpdateUser executed successfully on Database
+269,2025-07-23 15:29:50,Queue,SendNotification,234,294,5,REQ-46265,REQ-46265 Queue SendNotification - no issues detected
+270,2025-07-23 13:07:20,Scheduler,CacheData,251,276,14,REQ-57447,Scheduler CacheData completed in 251ms
+271,2025-07-23 13:37:50,Database,CacheData,188,322,13,REQ-17592,REQ-17592 CacheData executed successfully on Database
+272,2025-07-23 13:47:20,WebAPI,CacheData,338,265,15,REQ-80686,WebAPI service processed CacheData request
+273,2025-07-23 14:09:20,Queue,SendNotification,207,187,9,REQ-34957,"Operation SendNotification finished, Queue status: healthy"
+274,2025-07-23 14:38:50,Queue,CacheData,202,268,10,REQ-48890,Queue CacheData completed in 202ms
+275,2025-07-23 14:35:20,Queue,ProcessOrder,167,207,10,REQ-47388,Queue ProcessOrder completed in 167ms
+276,2025-07-23 15:01:50,Database,CacheData,176,195,14,REQ-98039,Database service processed CacheData request
+277,2025-07-23 15:19:20,Database,UpdateUser,114,216,13,REQ-27601,"Operation UpdateUser finished, Database status: healthy"
+278,2025-07-23 15:23:50,Scheduler,RunJob,243,372,9,REQ-37607,Scheduler service processed RunJob request
+279,2025-07-23 14:28:20,WebAPI,ProcessOrder,119,159,13,REQ-40982,"Operation ProcessOrder finished, WebAPI status: healthy"
+280,2025-07-23 13:08:50,Queue,RunJob,297,329,12,REQ-76784,REQ-76784 Queue RunJob - no issues detected
+281,2025-07-23 14:37:20,WebAPI,ProcessOrder,212,266,10,REQ-73788,REQ-73788 ProcessOrder executed successfully on WebAPI
+282,2025-07-23 13:57:50,Queue,SendNotification,185,327,15,REQ-10942,"Operation SendNotification finished, Queue status: healthy"
+283,2025-07-23 15:35:20,Scheduler,UpdateUser,191,300,4,REQ-83519,Scheduler UpdateUser completed in 191ms
+284,2025-07-23 13:55:50,WebAPI,ProcessOrder,144,390,10,REQ-82603,"Operation ProcessOrder finished, WebAPI status: healthy"
+285,2025-07-23 13:10:50,Scheduler,SendNotification,211,311,10,REQ-24371,Scheduler SendNotification completed in 211ms
+286,2025-07-23 15:36:20,Database,CacheData,128,253,13,REQ-24663,Database service processed CacheData request
+287,2025-07-23 14:30:50,Queue,RunJob,95,316,11,REQ-38016,Queue service processed RunJob request
+288,2025-07-23 15:48:20,Scheduler,ProcessOrder,251,313,19,REQ-91351,Scheduler ProcessOrder completed in 251ms
+289,2025-07-23 15:14:20,Queue,UpdateUser,238,382,6,REQ-49651,Queue service processed UpdateUser request
+290,2025-07-23 14:31:50,WebAPI,RunJob,185,258,11,REQ-17685,REQ-17685 WebAPI RunJob - no issues detected
+291,2025-07-23 15:03:50,Cache,UpdateUser,168,244,14,REQ-51441,Cache UpdateUser completed in 168ms
+292,2025-07-23 14:33:20,Queue,CacheData,120,225,14,REQ-10282,Queue CacheData completed in 120ms
+293,2025-07-23 15:24:20,Scheduler,SendNotification,223,281,11,REQ-54942,Scheduler service processed SendNotification request
+294,2025-07-23 14:56:20,WebAPI,CacheData,202,302,19,REQ-84085,WebAPI CacheData completed in 202ms
+295,2025-07-23 13:02:20,Scheduler,RunJob,156,271,14,REQ-44718,"Operation RunJob finished, Scheduler status: healthy"
+296,2025-07-23 13:35:50,WebAPI,SendNotification,281,409,14,REQ-24662,WebAPI completed SendNotification with normal performance
+297,2025-07-23 14:39:50,Queue,UpdateUser,183,413,16,REQ-17665,REQ-17665 UpdateUser executed successfully on Queue
+298,2025-07-23 15:42:20,Queue,CacheData,153,248,8,REQ-50404,Queue service processed CacheData request
+299,2025-07-23 16:09:50,Cache,CacheData,129,1354,13,REQ-16734,Cache CacheData processed successfully
+300,2025-07-23 16:06:50,Queue,ProcessOrder,192,1265,8,REQ-47268,Queue ProcessOrder processed successfully
+301,2025-07-23 15:37:20,Database,ProcessOrder,125,235,15,REQ-29536,"Operation ProcessOrder finished, Database status: healthy"
+302,2025-07-23 14:02:50,Queue,UpdateUser,196,186,10,REQ-41195,Queue service processed UpdateUser request
+303,2025-07-23 14:41:50,Cache,CacheData,194,162,7,REQ-51104,Cache service processed CacheData request
+304,2025-07-23 13:28:20,Cache,ProcessOrder,176,281,8,REQ-49117,Cache ProcessOrder completed in 176ms
+305,2025-07-23 13:14:20,Queue,SendNotification,261,330,14,REQ-18326,Queue SendNotification completed in 261ms
+306,2025-07-23 13:44:50,WebAPI,RunJob,167,393,10,REQ-44741,WebAPI RunJob completed in 167ms
+307,2025-07-23 14:15:20,Database,ProcessOrder,267,213,14,REQ-94696,Database completed ProcessOrder with normal performance
+308,2025-07-23 14:02:20,Queue,UpdateUser,160,448,12,REQ-77391,Queue service processed UpdateUser request
+309,2025-07-23 13:03:50,Scheduler,SendNotification,183,330,12,REQ-83579,REQ-83579 Scheduler SendNotification - no issues detected
+310,2025-07-23 13:06:20,Database,UpdateUser,215,303,11,REQ-86484,REQ-86484 UpdateUser executed successfully on Database
+311,2025-07-23 15:00:50,Scheduler,CacheData,203,382,7,REQ-61876,Scheduler completed CacheData with normal performance
+312,2025-07-23 13:58:20,WebAPI,ProcessOrder,218,361,9,REQ-19305,"Operation ProcessOrder finished, WebAPI status: healthy"
+313,2025-07-23 15:27:20,WebAPI,SendNotification,258,294,15,REQ-42914,WebAPI SendNotification completed in 258ms
+314,2025-07-23 15:24:50,Cache,CacheData,228,361,7,REQ-36685,Cache service processed CacheData request
+315,2025-07-23 13:09:50,Queue,SendNotification,21,226,11,REQ-21915,Queue completed SendNotification with normal performance
+316,2025-07-23 14:28:50,Scheduler,UpdateUser,228,270,18,REQ-31798,Scheduler UpdateUser completed in 228ms
+317,2025-07-23 15:31:50,Database,UpdateUser,207,358,10,REQ-27146,REQ-27146 UpdateUser executed successfully on Database
+318,2025-07-23 12:59:50,Queue,RunJob,118,271,8,REQ-75435,"Operation RunJob finished, Queue status: healthy"
+319,2025-07-23 15:11:20,Database,ProcessOrder,188,220,13,REQ-42018,"Operation ProcessOrder finished, Database status: healthy"
+320,2025-07-23 14:48:50,WebAPI,ProcessOrder,234,204,9,REQ-18907,REQ-18907 WebAPI ProcessOrder - no issues detected
+321,2025-07-23 13:12:50,Scheduler,ProcessOrder,246,316,8,REQ-99192,REQ-99192 ProcessOrder executed successfully on Scheduler
+322,2025-07-23 15:52:20,Cache,ProcessOrder,2090,829,21,REQ-35105,FAILED: Unable to complete ProcessOrder on Cache
+323,2025-07-23 12:28:20,Database,RunJob,182,301,13,REQ-89131,Database RunJob completed in 182ms
+324,2025-07-23 15:56:20,Queue,SendNotification,2575,855,17,REQ-23176,FAILED: Unable to complete SendNotification on Queue
+325,2025-07-23 12:38:50,Queue,CacheData,169,160,9,REQ-40512,REQ-40512 Queue CacheData - no issues detected
+326,2025-07-23 14:27:50,Queue,UpdateUser,172,190,18,REQ-22224,Queue UpdateUser completed in 172ms
+327,2025-07-23 12:48:50,WebAPI,RunJob,168,260,10,REQ-42087,WebAPI service processed RunJob request
+328,2025-07-23 14:07:20,WebAPI,SendNotification,241,273,12,REQ-71953,"Operation SendNotification finished, WebAPI status: healthy"
+329,2025-07-23 13:39:20,Scheduler,ProcessOrder,247,216,11,REQ-20322,"Operation ProcessOrder finished, Scheduler status: healthy"
+330,2025-07-23 15:17:50,Queue,ProcessOrder,197,270,14,REQ-49240,Queue completed ProcessOrder with normal performance
+331,2025-07-23 13:25:50,Cache,ProcessOrder,237,421,12,REQ-75612,REQ-75612 ProcessOrder executed successfully on Cache
+332,2025-07-23 12:12:20,Scheduler,RunJob,238,426,8,REQ-65302,"Operation RunJob finished, Scheduler status: healthy"
+333,2025-07-23 12:23:50,Scheduler,CacheData,155,254,12,REQ-30379,Scheduler completed CacheData with normal performance
+334,2025-07-23 12:20:20,Queue,RunJob,106,266,9,REQ-87236,Queue RunJob completed in 106ms
+335,2025-07-23 13:31:20,WebAPI,RunJob,208,488,14,REQ-59009,"Operation RunJob finished, WebAPI status: healthy"
+336,2025-07-23 13:17:20,Queue,RunJob,240,348,13,REQ-42953,"Operation RunJob finished, Queue status: healthy"
+337,2025-07-23 15:25:20,Queue,ProcessOrder,175,317,15,REQ-93130,Queue completed ProcessOrder with normal performance
+338,2025-07-23 14:57:20,Cache,SendNotification,207,221,15,REQ-51467,Cache SendNotification completed in 207ms
+339,2025-07-23 13:56:50,WebAPI,ProcessOrder,114,236,11,REQ-87128,WebAPI ProcessOrder completed in 114ms
+340,2025-07-23 12:53:50,Cache,RunJob,204,203,10,REQ-17331,REQ-17331 Cache RunJob - no issues detected
+341,2025-07-23 12:31:50,Queue,ProcessOrder,233,207,12,REQ-20328,Queue completed ProcessOrder with normal performance
+342,2025-07-23 14:06:20,Cache,RunJob,264,267,10,REQ-84847,Cache completed RunJob with normal performance
+343,2025-07-23 16:08:20,Scheduler,ProcessOrder,122,349,38,REQ-67733,Scheduler ProcessOrder finished successfully
+344,2025-07-23 15:15:20,Database,UpdateUser,225,404,10,REQ-95717,Database UpdateUser completed in 225ms
+345,2025-07-23 13:35:20,Scheduler,SendNotification,160,310,14,REQ-12552,REQ-12552 Scheduler SendNotification - no issues detected
+346,2025-07-23 12:26:50,WebAPI,RunJob,279,283,14,REQ-22676,WebAPI completed RunJob with normal performance
+347,2025-07-23 16:15:20,Queue,SendNotification,180,289,29,REQ-17026,Queue SendNotification finished successfully
+348,2025-07-23 15:36:50,Queue,SendNotification,230,163,15,REQ-19862,REQ-19862 SendNotification executed successfully on Queue
+349,2025-07-23 13:49:20,Scheduler,ProcessOrder,179,291,8,REQ-98039,REQ-98039 ProcessOrder executed successfully on Scheduler
+350,2025-07-23 14:27:20,WebAPI,SendNotification,198,206,15,REQ-11934,WebAPI service processed SendNotification request
+351,2025-07-23 14:13:20,WebAPI,ProcessOrder,190,348,10,REQ-71213,REQ-71213 ProcessOrder executed successfully on WebAPI
+352,2025-07-23 15:32:20,Scheduler,CacheData,192,298,16,REQ-93507,REQ-93507 Scheduler CacheData - no issues detected
+353,2025-07-23 12:08:20,Scheduler,SendNotification,222,388,11,REQ-42098,"Operation SendNotification finished, Scheduler status: healthy"
+354,2025-07-23 14:14:20,WebAPI,RunJob,267,202,9,REQ-98259,REQ-98259 RunJob executed successfully on WebAPI
+355,2025-07-23 15:50:20,WebAPI,ProcessOrder,245,170,10,REQ-33206,WebAPI ProcessOrder completed in 245ms
+356,2025-07-23 12:56:20,Queue,CacheData,164,365,12,REQ-45093,Queue service processed CacheData request
+357,2025-07-23 13:59:20,Database,RunJob,94,265,10,REQ-17716,REQ-17716 Database RunJob - no issues detected
+358,2025-07-23 15:40:50,Queue,CacheData,197,249,7,REQ-66333,"Operation CacheData finished, Queue status: healthy"
+359,2025-07-23 13:52:50,Database,CacheData,221,325,11,REQ-42493,REQ-42493 CacheData executed successfully on Database
+360,2025-07-23 13:31:50,WebAPI,UpdateUser,151,301,9,REQ-31174,REQ-31174 WebAPI UpdateUser - no issues detected
+361,2025-07-23 12:55:20,Database,ProcessOrder,140,342,13,REQ-51347,Database completed ProcessOrder with normal performance
+362,2025-07-23 14:32:20,WebAPI,UpdateUser,222,317,12,REQ-31579,WebAPI UpdateUser completed in 222ms
+363,2025-07-23 13:53:50,Cache,ProcessOrder,206,328,13,REQ-18392,"Operation ProcessOrder finished, Cache status: healthy"
+364,2025-07-23 12:36:50,Queue,SendNotification,278,383,8,REQ-96673,Queue SendNotification completed in 278ms
+365,2025-07-23 12:29:50,Scheduler,ProcessOrder,292,476,16,REQ-70217,Scheduler service processed ProcessOrder request
+366,2025-07-23 12:22:20,Queue,UpdateUser,85,270,8,REQ-65392,Queue completed UpdateUser with normal performance
+367,2025-07-23 14:19:50,WebAPI,UpdateUser,264,206,14,REQ-80292,"Operation UpdateUser finished, WebAPI status: healthy"
+368,2025-07-23 14:49:50,Scheduler,RunJob,256,355,11,REQ-40828,"Operation RunJob finished, Scheduler status: healthy"
+369,2025-07-23 13:46:20,Database,UpdateUser,235,319,9,REQ-65461,REQ-65461 UpdateUser executed successfully on Database
+370,2025-07-23 15:49:20,Cache,ProcessOrder,130,285,10,REQ-41029,REQ-41029 ProcessOrder executed successfully on Cache
+371,2025-07-23 12:19:50,Database,ProcessOrder,275,322,14,REQ-68878,Database service processed ProcessOrder request
+372,2025-07-23 15:38:20,Cache,ProcessOrder,222,375,16,REQ-14722,REQ-14722 ProcessOrder executed successfully on Cache
+373,2025-07-23 14:01:20,Database,RunJob,238,330,13,REQ-53309,"Operation RunJob finished, Database status: healthy"
+374,2025-07-23 14:16:20,Database,RunJob,267,238,10,REQ-17944,"Operation RunJob finished, Database status: healthy"
+375,2025-07-23 14:30:20,Cache,SendNotification,214,261,10,REQ-73092,Cache SendNotification completed in 214ms
+376,2025-07-23 13:27:20,Scheduler,RunJob,183,363,13,REQ-23947,Scheduler completed RunJob with normal performance
+377,2025-07-23 15:38:50,Database,SendNotification,150,311,18,REQ-58393,Database service processed SendNotification request
+378,2025-07-23 13:15:20,Database,SendNotification,161,188,8,REQ-60019,REQ-60019 SendNotification executed successfully on Database
+379,2025-07-23 12:37:20,Scheduler,ProcessOrder,141,399,9,REQ-39871,Scheduler completed ProcessOrder with normal performance
+380,2025-07-23 13:13:50,Cache,RunJob,247,308,12,REQ-88172,REQ-88172 RunJob executed successfully on Cache
+381,2025-07-23 13:10:20,Scheduler,UpdateUser,182,296,9,REQ-16175,Scheduler service processed UpdateUser request
+382,2025-07-23 16:04:20,WebAPI,RunJob,248,1570,12,REQ-93606,WebAPI RunJob processed successfully
+383,2025-07-23 12:10:20,Cache,UpdateUser,233,308,12,REQ-98696,Cache service processed UpdateUser request
+384,2025-07-23 14:49:20,Cache,UpdateUser,193,269,13,REQ-98501,"Operation UpdateUser finished, Cache status: healthy"
+385,2025-07-23 15:57:50,Queue,CacheData,2544,843,31,REQ-39816,FAILED: Unable to complete CacheData on Queue
+386,2025-07-23 12:38:20,Database,SendNotification,116,313,13,REQ-20458,REQ-20458 Database SendNotification - no issues detected
+387,2025-07-23 14:36:20,Scheduler,SendNotification,213,303,13,REQ-82845,REQ-82845 SendNotification executed successfully on Scheduler
+388,2025-07-23 12:13:20,Queue,UpdateUser,177,429,11,REQ-13905,"Operation UpdateUser finished, Queue status: healthy"
+389,2025-07-23 13:24:20,Queue,SendNotification,268,366,10,REQ-69470,Queue SendNotification completed in 268ms
+390,2025-07-23 12:26:20,Queue,ProcessOrder,223,367,13,REQ-59797,REQ-59797 ProcessOrder executed successfully on Queue
+391,2025-07-23 15:15:50,Scheduler,ProcessOrder,168,347,16,REQ-79329,Scheduler service processed ProcessOrder request
+392,2025-07-23 16:00:20,Cache,ProcessOrder,1517,987,20,REQ-80010,TIMEOUT: Cache ProcessOrder exceeded deadline
+393,2025-07-23 15:27:50,Scheduler,UpdateUser,153,309,12,REQ-16658,Scheduler completed UpdateUser with normal performance
+394,2025-07-23 13:54:20,Queue,RunJob,225,344,15,REQ-54313,"Operation RunJob finished, Queue status: healthy"
+395,2025-07-23 14:25:50,Cache,ProcessOrder,199,322,11,REQ-16630,"Operation ProcessOrder finished, Cache status: healthy"
+396,2025-07-23 15:43:20,Queue,ProcessOrder,260,357,10,REQ-15229,REQ-15229 Queue ProcessOrder - no issues detected
+397,2025-07-23 15:41:20,Database,SendNotification,194,310,9,REQ-26704,Database completed SendNotification with normal performance
+398,2025-07-23 14:54:50,Queue,SendNotification,205,308,10,REQ-64948,Queue service processed SendNotification request
+399,2025-07-23 14:04:20,WebAPI,RunJob,233,257,14,REQ-73624,WebAPI completed RunJob with normal performance
+400,2025-07-23 13:49:50,Cache,UpdateUser,272,347,12,REQ-95180,REQ-95180 UpdateUser executed successfully on Cache
+401,2025-07-23 13:52:20,Cache,ProcessOrder,211,379,11,REQ-25860,REQ-25860 Cache ProcessOrder - no issues detected
+402,2025-07-23 14:33:50,Scheduler,CacheData,231,301,10,REQ-61173,Scheduler CacheData completed in 231ms
+403,2025-07-23 15:54:50,Scheduler,SendNotification,1191,889,21,REQ-78765,FAILED: Unable to complete SendNotification on Scheduler
+404,2025-07-23 14:11:50,Queue,CacheData,186,362,13,REQ-56438,REQ-56438 Queue CacheData - no issues detected
+405,2025-07-23 16:10:20,Scheduler,RunJob,237,1046,11,REQ-43092,Scheduler RunJob processed successfully
+406,2025-07-23 16:09:20,Cache,CacheData,1576,291,9,REQ-34164,Cache CacheData completed
+407,2025-07-23 14:37:50,Scheduler,CacheData,246,348,14,REQ-30289,"Operation CacheData finished, Scheduler status: healthy"
+408,2025-07-23 15:01:20,Database,CacheData,168,264,10,REQ-27154,REQ-27154 Database CacheData - no issues detected
+409,2025-07-23 14:20:50,Queue,UpdateUser,104,343,8,REQ-28373,"Operation UpdateUser finished, Queue status: healthy"
+410,2025-07-23 13:46:50,Cache,UpdateUser,133,323,14,REQ-37760,Cache service processed UpdateUser request
+411,2025-07-23 13:26:50,WebAPI,ProcessOrder,174,170,14,REQ-76542,REQ-76542 WebAPI ProcessOrder - no issues detected
+412,2025-07-23 12:27:50,Database,ProcessOrder,236,345,9,REQ-55082,Database ProcessOrder completed in 236ms
+413,2025-07-23 13:54:50,Queue,ProcessOrder,194,284,10,REQ-12757,Queue service processed ProcessOrder request
+414,2025-07-23 15:26:50,Scheduler,RunJob,171,277,11,REQ-74032,Scheduler completed RunJob with normal performance
+415,2025-07-23 13:41:20,Database,SendNotification,162,422,10,REQ-79822,Database service processed SendNotification request
+416,2025-07-23 14:40:50,Scheduler,UpdateUser,174,151,14,REQ-81066,REQ-81066 Scheduler UpdateUser - no issues detected
+417,2025-07-23 14:15:50,Database,ProcessOrder,64,226,10,REQ-22899,Database ProcessOrder completed in 64ms
+418,2025-07-23 12:58:50,Scheduler,RunJob,200,272,14,REQ-37869,Scheduler service processed RunJob request
+419,2025-07-23 12:32:50,Scheduler,CacheData,153,326,14,REQ-48427,Scheduler CacheData completed in 153ms
+420,2025-07-23 15:20:50,Database,CacheData,177,433,17,REQ-24029,"Operation CacheData finished, Database status: healthy"
+421,2025-07-23 12:06:50,Scheduler,SendNotification,169,283,9,REQ-24592,REQ-24592 SendNotification executed successfully on Scheduler
+422,2025-07-23 15:46:50,Scheduler,RunJob,195,298,12,REQ-56357,Scheduler service processed RunJob request
+423,2025-07-23 16:07:20,Scheduler,ProcessOrder,540,548,18,REQ-71524,Scheduler ProcessOrder executed normally
+424,2025-07-23 12:30:50,Queue,ProcessOrder,213,304,19,REQ-26361,Queue service processed ProcessOrder request
+425,2025-07-23 15:35:50,Queue,SendNotification,132,267,13,REQ-11267,Queue SendNotification completed in 132ms
+426,2025-07-23 12:46:20,Scheduler,UpdateUser,226,215,15,REQ-19358,Scheduler service processed UpdateUser request
+427,2025-07-23 13:48:50,Cache,ProcessOrder,257,331,15,REQ-62296,Cache ProcessOrder completed in 257ms
+428,2025-07-23 12:23:20,Cache,ProcessOrder,260,289,15,REQ-46421,REQ-46421 Cache ProcessOrder - no issues detected
+429,2025-07-23 14:17:50,WebAPI,CacheData,99,357,10,REQ-24322,REQ-24322 WebAPI CacheData - no issues detected
+430,2025-07-23 15:39:50,Scheduler,UpdateUser,114,256,13,REQ-82420,Scheduler completed UpdateUser with normal performance
+431,2025-07-23 15:09:20,Queue,ProcessOrder,187,402,14,REQ-44760,REQ-44760 Queue ProcessOrder - no issues detected
+432,2025-07-23 12:51:50,WebAPI,UpdateUser,240,306,8,REQ-83000,REQ-83000 UpdateUser executed successfully on WebAPI
+433,2025-07-23 14:55:50,Queue,ProcessOrder,201,337,7,REQ-86503,Queue completed ProcessOrder with normal performance
+434,2025-07-23 16:02:50,Cache,SendNotification,209,636,8,REQ-82529,Cache SendNotification processed successfully
+435,2025-07-23 12:32:20,Queue,RunJob,312,379,14,REQ-82357,Queue completed RunJob with normal performance
+436,2025-07-23 14:58:50,Database,UpdateUser,300,316,14,REQ-97782,"Operation UpdateUser finished, Database status: healthy"
+437,2025-07-23 14:18:20,Queue,CacheData,250,311,11,REQ-42591,Queue CacheData completed in 250ms
+438,2025-07-23 14:06:50,WebAPI,RunJob,234,309,11,REQ-85525,REQ-85525 RunJob executed successfully on WebAPI
+439,2025-07-23 12:12:50,Database,UpdateUser,231,287,12,REQ-14165,Database UpdateUser completed in 231ms
+440,2025-07-23 14:43:50,Database,SendNotification,125,315,11,REQ-72493,REQ-72493 Database SendNotification - no issues detected
+441,2025-07-23 12:50:20,Queue,UpdateUser,252,290,13,REQ-59735,Queue service processed UpdateUser request
+442,2025-07-23 15:19:50,Database,UpdateUser,269,254,8,REQ-44664,Database service processed UpdateUser request
+443,2025-07-23 14:22:50,Queue,SendNotification,241,268,11,REQ-70637,"Operation SendNotification finished, Queue status: healthy"
+444,2025-07-23 13:29:20,Queue,SendNotification,168,228,8,REQ-76540,REQ-76540 SendNotification executed successfully on Queue
+445,2025-07-23 14:50:20,Database,CacheData,125,252,10,REQ-62923,REQ-62923 Database CacheData - no issues detected
+446,2025-07-23 16:12:20,Queue,RunJob,235,343,38,REQ-62521,Queue RunJob finished successfully
+447,2025-07-23 13:13:20,Cache,CacheData,203,337,11,REQ-65333,REQ-65333 CacheData executed successfully on Cache
+448,2025-07-23 14:39:20,WebAPI,RunJob,256,401,13,REQ-38534,WebAPI completed RunJob with normal performance
+449,2025-07-23 16:06:20,Scheduler,RunJob,517,377,17,REQ-85243,Scheduler RunJob executed normally
+450,2025-07-23 14:45:50,Cache,ProcessOrder,114,358,11,REQ-17455,Cache service processed ProcessOrder request
+451,2025-07-23 14:07:50,Cache,ProcessOrder,268,258,10,REQ-41850,REQ-41850 ProcessOrder executed successfully on Cache
+452,2025-07-23 12:33:20,Cache,CacheData,358,246,15,REQ-92397,"Operation CacheData finished, Cache status: healthy"
+453,2025-07-23 15:07:50,Scheduler,ProcessOrder,217,325,8,REQ-80468,REQ-80468 ProcessOrder executed successfully on Scheduler
+454,2025-07-23 12:31:20,Queue,SendNotification,87,394,12,REQ-59615,"Operation SendNotification finished, Queue status: healthy"
+455,2025-07-23 15:54:20,Queue,SendNotification,2195,958,24,REQ-87278,ERROR: Queue SendNotification failed with timeout
+456,2025-07-23 13:33:20,Queue,UpdateUser,196,155,5,REQ-10074,Queue completed UpdateUser with normal performance
+457,2025-07-23 15:48:50,Queue,RunJob,204,245,6,REQ-30257,REQ-30257 Queue RunJob - no issues detected
+458,2025-07-23 13:40:50,Cache,RunJob,206,233,7,REQ-19071,REQ-19071 Cache RunJob - no issues detected
+459,2025-07-23 16:14:20,Scheduler,UpdateUser,624,505,20,REQ-92502,Scheduler UpdateUser executed normally
+460,2025-07-23 13:39:50,WebAPI,RunJob,226,294,9,REQ-21226,WebAPI service processed RunJob request
+461,2025-07-23 13:30:50,Queue,SendNotification,223,341,11,REQ-30032,REQ-30032 SendNotification executed successfully on Queue
+462,2025-07-23 12:35:20,Queue,RunJob,266,270,8,REQ-35203,Queue RunJob completed in 266ms
+463,2025-07-23 12:30:20,Database,ProcessOrder,179,275,16,REQ-80284,REQ-80284 Database ProcessOrder - no issues detected
+464,2025-07-23 14:58:20,Database,SendNotification,227,220,10,REQ-36772,Database completed SendNotification with normal performance
+465,2025-07-23 14:03:50,Database,ProcessOrder,167,243,15,REQ-97684,"Operation ProcessOrder finished, Database status: healthy"
+466,2025-07-23 14:12:20,Queue,UpdateUser,217,310,13,REQ-65519,"Operation UpdateUser finished, Queue status: healthy"
+467,2025-07-23 12:16:50,Scheduler,RunJob,241,364,9,REQ-83563,REQ-83563 RunJob executed successfully on Scheduler
+468,2025-07-23 14:42:50,WebAPI,RunJob,259,365,17,REQ-16572,WebAPI completed RunJob with normal performance
+469,2025-07-23 15:55:50,Cache,UpdateUser,2513,642,22,REQ-47093,TIMEOUT: Cache UpdateUser exceeded deadline
+470,2025-07-23 13:26:20,Cache,ProcessOrder,250,352,18,REQ-33416,REQ-33416 ProcessOrder executed successfully on Cache
+471,2025-07-23 14:24:20,Scheduler,SendNotification,189,250,10,REQ-68082,"Operation SendNotification finished, Scheduler status: healthy"
+472,2025-07-23 15:47:50,Cache,SendNotification,166,325,12,REQ-63264,REQ-63264 SendNotification executed successfully on Cache
+473,2025-07-23 13:41:50,Scheduler,RunJob,199,316,15,REQ-26483,Scheduler completed RunJob with normal performance
+474,2025-07-23 15:18:50,WebAPI,SendNotification,163,330,12,REQ-23577,REQ-23577 WebAPI SendNotification - no issues detected
+475,2025-07-23 14:32:50,Queue,RunJob,237,360,10,REQ-59672,REQ-59672 Queue RunJob - no issues detected
+476,2025-07-23 15:32:50,Queue,UpdateUser,140,315,21,REQ-44335,"Operation UpdateUser finished, Queue status: healthy"
+477,2025-07-23 14:57:50,Queue,UpdateUser,243,206,12,REQ-44179,Queue service processed UpdateUser request
+478,2025-07-23 14:14:50,Scheduler,CacheData,182,394,13,REQ-95649,Scheduler completed CacheData with normal performance
+479,2025-07-23 14:40:20,Scheduler,RunJob,230,301,8,REQ-85914,"Operation RunJob finished, Scheduler status: healthy"
+480,2025-07-23 13:20:50,Queue,RunJob,203,291,8,REQ-44973,"Operation RunJob finished, Queue status: healthy"
+481,2025-07-23 13:11:20,Cache,SendNotification,171,311,15,REQ-30033,REQ-30033 SendNotification executed successfully on Cache
+482,2025-07-23 13:21:50,WebAPI,SendNotification,154,345,16,REQ-54587,"Operation SendNotification finished, WebAPI status: healthy"
+483,2025-07-23 15:05:50,Scheduler,RunJob,227,255,9,REQ-91416,"Operation RunJob finished, Scheduler status: healthy"
+484,2025-07-23 12:55:50,WebAPI,UpdateUser,213,358,9,REQ-62581,WebAPI completed UpdateUser with normal performance
+485,2025-07-23 15:12:20,Database,UpdateUser,259,325,12,REQ-47353,"Operation UpdateUser finished, Database status: healthy"
+486,2025-07-23 12:49:50,WebAPI,CacheData,212,264,13,REQ-70589,REQ-70589 WebAPI CacheData - no issues detected
+487,2025-07-23 15:55:20,Queue,SendNotification,1449,927,23,REQ-88222,FAILED: SendNotification on Queue - insufficient resources
+488,2025-07-23 14:51:20,Cache,UpdateUser,169,357,12,REQ-84668,Cache UpdateUser completed in 169ms
+489,2025-07-23 13:53:20,Cache,CacheData,227,236,14,REQ-39451,Cache CacheData completed in 227ms
+490,2025-07-23 15:59:20,Scheduler,CacheData,1496,833,26,REQ-49618,FAILED: Unable to complete CacheData on Scheduler
+491,2025-07-23 13:06:50,Queue,UpdateUser,258,307,11,REQ-62350,REQ-62350 Queue UpdateUser - no issues detected
+492,2025-07-23 16:15:50,WebAPI,UpdateUser,480,429,19,REQ-29887,WebAPI UpdateUser executed normally
+493,2025-07-23 12:16:20,Database,UpdateUser,285,403,12,REQ-13478,REQ-13478 UpdateUser executed successfully on Database
+494,2025-07-23 13:40:20,WebAPI,SendNotification,267,323,9,REQ-73699,REQ-73699 SendNotification executed successfully on WebAPI
+495,2025-07-23 12:41:50,Scheduler,ProcessOrder,210,201,12,REQ-57819,"Operation ProcessOrder finished, Scheduler status: healthy"
+496,2025-07-23 12:59:20,Cache,CacheData,313,308,10,REQ-95909,REQ-95909 CacheData executed successfully on Cache
+497,2025-07-23 14:21:20,Cache,CacheData,208,218,8,REQ-65296,REQ-65296 CacheData executed successfully on Cache
+498,2025-07-23 15:00:20,Database,CacheData,255,338,10,REQ-44814,Database CacheData completed in 255ms
+499,2025-07-23 15:43:50,Queue,UpdateUser,237,296,15,REQ-56898,Queue completed UpdateUser with normal performance
+500,2025-07-23 12:57:20,Queue,UpdateUser,166,395,14,REQ-37653,Queue completed UpdateUser with normal performance

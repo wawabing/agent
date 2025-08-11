@@ -1,0 +1,501 @@
+LineId,Timestamp,Level,Service,ResponseTime_ms,MemoryUsage_MB,ThreadCount,Message
+501,2025-07-22 15:23:27,DEBUG,UserService,171,278,18,[DEBUG] UserService configuration loaded successfully
+502,2025-07-22 11:11:57,INFO,AuthService,187,230,18,AuthService completed batch operation
+503,2025-07-22 13:00:57,DEBUG,PaymentAPI,132,238,20,[DEBUG] PaymentAPI connection pool stats: 5/20 active
+504,2025-07-22 17:18:57,WARN,PaymentAPI,898,428,25,[WARN] PaymentAPI retry attempt 3 of 5
+505,2025-07-22 16:19:57,INFO,OrderProcessor,156,340,13,OrderProcessor processed request successfully in 156ms
+506,2025-07-22 17:43:27,ERROR,PaymentAPI,688,425,17,[ERROR] PaymentAPI out of memory during large operation
+507,2025-07-22 15:25:27,DEBUG,AuthService,172,260,12,[DEBUG] AuthService thread pool status: healthy
+508,2025-07-22 12:54:57,CRITICAL,PaymentAPI,182,294,17,[DEBUG] PaymentAPI configuration loaded successfully
+509,2025-07-22 17:41:27,ERROR,AuthService,1078,304,27,[ERROR] AuthService failed to connect to database
+510,2025-07-22 15:58:57,DEBUG,UserService,190,286,13,[DEBUG] Query execution plan optimized for UserService
+511,2025-07-22 11:51:57,INFO,AuthService,147,222,18,Request validated and forwarded to AuthService
+512,2025-07-22 14:12:27,INFO,OrderProcessor,101,244,14,Request validated and forwarded to OrderProcessor
+513,2025-07-22 12:30:57,INFO,UserService,101,257,17,UserService cache hit - data retrieved efficiently
+514,2025-07-22 09:50:57,INFO,AuthService,157,223,15,User session established for AuthService
+515,2025-07-22 12:25:27,DEBUG,PaymentAPI,153,317,13,[DEBUG] PaymentAPI connection pool stats: 5/20 active
+516,2025-07-22 16:02:27,DEBUG,OrderProcessor,140,310,12,[DEBUG] OrderProcessor thread pool status: healthy
+517,2025-07-22 11:34:27,INFO,PaymentAPI,166,200,15,PaymentAPI processed request successfully in 166ms
+518,2025-07-22 11:12:57,INFO,PaymentAPI,158,206,6,User session established for PaymentAPI
+519,2025-07-22 17:54:57,ERROR,UserService,477,590,26,[ERROR] UserService authentication failed - invalid credentials
+520,2025-07-22 09:54:27,INFO,OrderProcessor,173,253,13,Request validated and forwarded to OrderProcessor
+521,2025-07-22 12:41:27,INFO,OrderProcessor,139,214,10,OrderProcessor cache hit - data retrieved efficiently
+522,2025-07-22 15:16:27,INFO,OrderProcessor,162,224,13,OrderProcessor cache hit - data retrieved efficiently
+523,2025-07-22 16:53:57,INFO,PaymentAPI,141,271,14,User session established for PaymentAPI
+524,2025-07-22 12:33:27,INFO,OrderProcessor,131,289,17,OrderProcessor completed batch operation
+525,2025-07-22 13:18:57,INFO,UserService,163,317,16,UserService completed batch operation
+526,2025-07-22 14:18:57,DEBUG,UserService,152,160,15,[DEBUG] Query execution plan optimized for UserService
+527,2025-07-22 16:39:57,INFO,OrderProcessor,143,218,17,Request validated and forwarded to OrderProcessor
+528,2025-07-22 11:24:57,DEBUG,OrderProcessor,143,258,15,[DEBUG] OrderProcessor connection pool stats: 5/20 active
+529,2025-07-22 14:58:27,INFO,OrderProcessor,175,298,13,Request validated and forwarded to OrderProcessor
+530,2025-07-22 10:29:57,INFO,AuthService,162,207,13,User session established for AuthService
+531,2025-07-22 14:22:27,INFO,PaymentAPI,168,242,16,Request validated and forwarded to PaymentAPI
+532,2025-07-22 10:17:27,INFO,UserService,168,256,13,UserService cache hit - data retrieved efficiently
+533,2025-07-22 14:54:27,INFO,UserService,189,205,20,User session established for UserService
+534,2025-07-22 12:05:27,INFO,UserService,147,293,16,UserService completed batch operation
+535,2025-07-22 16:45:27,INFO,UserService,112,195,15,User session established for UserService
+536,2025-07-22 13:20:27,INFO,UserService,145,264,17,UserService cache hit - data retrieved efficiently
+537,2025-07-22 10:59:57,INFO,OrderProcessor,109,271,16,OrderProcessor processed request successfully in 109ms
+538,2025-07-22 10:20:57,INFO,OrderProcessor,164,209,17,User session established for OrderProcessor
+539,2025-07-22 15:48:27,INFO,PaymentAPI,153,283,15,PaymentAPI cache hit - data retrieved efficiently
+540,2025-07-22 13:26:27,DEBUG,UserService,156,257,10,[DEBUG] UserService thread pool status: healthy
+541,2025-07-22 11:17:27,INFO,AuthService,151,196,15,AuthService processed request successfully in 151ms
+542,2025-07-22 11:58:57,DEBUG,AuthService,164,255,9,[DEBUG] Query execution plan optimized for AuthService
+543,2025-07-22 11:41:27,INFO,PaymentAPI,186,214,12,User session established for PaymentAPI
+544,2025-07-22 13:46:57,INFO,UserService,182,281,16,UserService cache hit - data retrieved efficiently
+545,2025-07-22 10:41:57,INFO,PaymentAPI,180,215,20,User session established for PaymentAPI
+546,2025-07-22 17:34:57,WARN,OrderProcessor,621,399,15,[WARN] OrderProcessor memory usage above 80%
+547,2025-07-22 13:59:27,DEBUG,AuthService,146,210,13,[DEBUG] AuthService connection pool stats: 5/20 active
+548,2025-07-22 16:35:57,DEBUG,PaymentAPI,97,224,15,[DEBUG] PaymentAPI configuration loaded successfully
+549,2025-07-22 14:38:57,INFO,PaymentAPI,175,199,18,Request validated and forwarded to PaymentAPI
+550,2025-07-22 10:46:27,DEBUG,UserService,180,269,18,[DEBUG] UserService thread pool status: healthy
+551,2025-07-22 10:41:27,DEBUG,OrderProcessor,199,188,12,[DEBUG] Query execution plan optimized for OrderProcessor
+552,2025-07-22 13:39:57,DEBUG,PaymentAPI,144,332,16,[DEBUG] Cache statistics updated for PaymentAPI
+553,2025-07-22 15:29:57,INFO,OrderProcessor,139,279,20,Request validated and forwarded to OrderProcessor
+554,2025-07-22 10:11:57,INFO,UserService,147,309,26,User session established for UserService
+555,2025-07-22 16:54:57,INFO,AuthService,139,390,19,AuthService cache hit - data retrieved efficiently
+556,2025-07-22 17:19:27,ERROR,UserService,1059,730,27,[ERROR] UserService connection refused by external API
+557,2025-07-22 12:47:57,INFO,OrderProcessor,195,246,17,User session established for OrderProcessor
+558,2025-07-22 11:57:27,INFO,PaymentAPI,150,330,11,Request validated and forwarded to PaymentAPI
+559,2025-07-22 10:06:27,INFO,OrderProcessor,161,303,6,OrderProcessor processed request successfully in 161ms
+560,2025-07-22 12:37:57,INFO,AuthService,196,243,17,AuthService processed request successfully in 196ms
+561,2025-07-22 11:20:57,INFO,UserService,227,285,12,UserService completed batch operation
+562,2025-07-22 18:02:57,ERROR,UserService,645,443,25,[ERROR] Timeout exception in UserService after 30 seconds
+563,2025-07-22 16:40:27,INFO,PaymentAPI,140,247,11,Request validated and forwarded to PaymentAPI
+564,2025-07-22 15:51:27,INFO,AuthService,127,205,11,User session established for AuthService
+565,2025-07-22 11:54:57,INFO,OrderProcessor,179,246,17,OrderProcessor processed request successfully in 179ms
+566,2025-07-22 13:24:57,INFO,PaymentAPI,138,208,15,PaymentAPI completed batch operation
+567,2025-07-22 15:20:57,DEBUG,AuthService,175,255,9,[DEBUG] AuthService connection pool stats: 5/20 active
+568,2025-07-22 12:15:27,INFO,OrderProcessor,163,354,14,Request validated and forwarded to OrderProcessor
+569,2025-07-22 12:33:57,INFO,PaymentAPI,204,279,16,PaymentAPI completed batch operation
+570,2025-07-22 17:46:27,ERROR,AuthService,1065,241,23,[ERROR] Timeout exception in AuthService after 30 seconds
+571,2025-07-22 10:57:57,INFO,AuthService,143,248,15,AuthService cache hit - data retrieved efficiently
+572,2025-07-22 10:45:27,INFO,PaymentAPI,108,275,13,Request validated and forwarded to PaymentAPI
+573,2025-07-22 16:16:27,INFO,PaymentAPI,155,354,20,PaymentAPI cache hit - data retrieved efficiently
+574,2025-07-22 10:08:27,DEBUG,AuthService,142,223,13,[DEBUG] AuthService thread pool status: healthy
+575,2025-07-22 12:39:57,INFO,UserService,129,304,17,UserService cache hit - data retrieved efficiently
+576,2025-07-22 17:26:57,WARN,AuthService,1130,323,26,[WARN] AuthService retry attempt 3 of 5
+577,2025-07-22 10:54:27,INFO,PaymentAPI,155,256,15,PaymentAPI completed batch operation
+578,2025-07-22 13:38:27,INFO,UserService,152,296,20,UserService cache hit - data retrieved efficiently
+579,2025-07-22 13:02:57,INFO,UserService,198,258,11,UserService completed batch operation
+580,2025-07-22 14:55:57,INFO,AuthService,131,268,18,AuthService processed request successfully in 131ms
+581,2025-07-22 12:23:27,INFO,OrderProcessor,105,125,18,OrderProcessor processed request successfully in 105ms
+582,2025-07-22 09:52:57,INFO,AuthService,185,412,14,AuthService completed batch operation
+583,2025-07-22 16:27:57,INFO,OrderProcessor,124,198,15,OrderProcessor cache hit - data retrieved efficiently
+584,2025-07-22 16:18:27,INFO,PaymentAPI,147,218,10,PaymentAPI completed batch operation
+585,2025-07-22 16:27:27,INFO,PaymentAPI,187,268,15,PaymentAPI processed request successfully in 187ms
+586,2025-07-22 13:06:57,INFO,OrderProcessor,130,310,17,OrderProcessor cache hit - data retrieved efficiently
+587,2025-07-22 14:11:57,INFO,PaymentAPI,148,292,11,PaymentAPI processed request successfully in 148ms
+588,2025-07-22 14:53:27,INFO,UserService,119,272,15,UserService processed request successfully in 119ms
+589,2025-07-22 10:02:27,INFO,OrderProcessor,103,312,12,OrderProcessor processed request successfully in 103ms
+590,2025-07-22 11:10:57,INFO,UserService,176,205,10,UserService cache hit - data retrieved efficiently
+591,2025-07-22 11:45:57,DEBUG,OrderProcessor,178,324,11,[DEBUG] OrderProcessor connection pool stats: 5/20 active
+592,2025-07-22 16:37:27,INFO,PaymentAPI,180,254,17,PaymentAPI completed batch operation
+593,2025-07-22 15:16:57,INFO,UserService,142,246,10,UserService processed request successfully in 142ms
+594,2025-07-22 16:00:27,INFO,UserService,145,254,21,UserService cache hit - data retrieved efficiently
+595,2025-07-22 16:52:27,INFO,AuthService,142,284,13,Request validated and forwarded to AuthService
+596,2025-07-22 11:00:27,DEBUG,AuthService,131,287,15,[DEBUG] AuthService configuration loaded successfully
+597,2025-07-22 12:06:57,INFO,UserService,90,322,17,UserService processed request successfully in 90ms
+598,2025-07-22 14:44:27,INFO,AuthService,150,220,15,User session established for AuthService
+599,2025-07-22 14:27:57,INFO,PaymentAPI,198,318,15,PaymentAPI processed request successfully in 198ms
+600,2025-07-22 15:54:57,INFO,OrderProcessor,147,240,18,Request validated and forwarded to OrderProcessor
+601,2025-07-22 09:51:57,INFO,AuthService,129,324,13,AuthService completed batch operation
+602,2025-07-22 10:46:57,DEBUG,AuthService,223,226,14,[DEBUG] AuthService configuration loaded successfully
+603,2025-07-22 12:24:27,INFO,AuthService,149,277,13,AuthService completed batch operation
+604,2025-07-22 11:50:57,INFO,AuthService,175,187,16,Request validated and forwarded to AuthService
+605,2025-07-22 15:11:57,INFO,AuthService,208,143,20,User session established for AuthService
+606,2025-07-22 17:45:27,WARN,AuthService,1122,375,24,[WARN] AuthService rate limiting applied to client
+607,2025-07-22 11:18:27,INFO,OrderProcessor,178,291,13,User session established for OrderProcessor
+608,2025-07-22 10:40:57,DEBUG,PaymentAPI,110,240,19,[DEBUG] PaymentAPI connection pool stats: 5/20 active
+609,2025-07-22 14:51:27,INFO,PaymentAPI,160,212,6,Request validated and forwarded to PaymentAPI
+610,2025-07-22 14:46:27,INFO,PaymentAPI,118,377,17,PaymentAPI processed request successfully in 118ms
+611,2025-07-22 11:13:27,INFO,UserService,124,127,13,UserService completed batch operation
+612,2025-07-22 12:13:57,INFO,UserService,155,290,14,UserService processed request successfully in 155ms
+613,2025-07-22 16:02:57,INFO,PaymentAPI,126,190,18,Request validated and forwarded to PaymentAPI
+614,2025-07-22 15:39:27,INFO,PaymentAPI,68,210,13,PaymentAPI processed request successfully in 68ms
+615,2025-07-22 15:44:57,INFO,OrderProcessor,172,211,12,OrderProcessor cache hit - data retrieved efficiently
+616,2025-07-22 15:25:57,INFO,AuthService,168,326,19,AuthService completed batch operation
+617,2025-07-22 17:52:57,ERROR,AuthService,788,503,19,[ERROR] NullPointerException in AuthService.processRequest()
+618,2025-07-22 14:01:57,DEBUG,UserService,161,330,14,[DEBUG] UserService connection pool stats: 5/20 active
+619,2025-07-22 17:55:27,ERROR,PaymentAPI,747,444,26,[ERROR] Timeout exception in PaymentAPI after 30 seconds
+620,2025-07-22 10:05:57,INFO,AuthService,212,299,16,AuthService completed batch operation
+621,2025-07-22 17:17:57,ERROR,PaymentAPI,513,384,26,[ERROR] PaymentAPI failed to connect to database
+622,2025-07-22 11:01:57,INFO,AuthService,163,252,15,AuthService processed request successfully in 163ms
+623,2025-07-22 16:48:57,INFO,UserService,149,265,14,UserService completed batch operation
+624,2025-07-22 11:08:57,INFO,UserService,202,286,13,User session established for UserService
+625,2025-07-22 09:51:27,INFO,PaymentAPI,133,226,18,PaymentAPI completed batch operation
+626,2025-07-22 13:58:57,INFO,OrderProcessor,186,221,14,User session established for OrderProcessor
+627,2025-07-22 10:07:27,INFO,UserService,180,292,13,UserService processed request successfully in 180ms
+628,2025-07-22 17:48:57,ERROR,UserService,843,371,21,[ERROR] UserService authentication failed - invalid credentials
+629,2025-07-22 17:33:27,WARN,PaymentAPI,860,648,28,[WARN] PaymentAPI cache miss rate above 20%
+630,2025-07-22 14:00:57,INFO,UserService,125,220,15,Request validated and forwarded to UserService
+631,2025-07-22 17:39:27,ERROR,AuthService,640,314,24,[ERROR] AuthService failed to connect to database
+632,2025-07-22 13:43:27,INFO,PaymentAPI,119,275,18,User session established for PaymentAPI
+633,2025-07-22 12:04:57,INFO,PaymentAPI,165,223,13,Request validated and forwarded to PaymentAPI
+634,2025-07-22 15:42:27,INFO,PaymentAPI,145,201,16,PaymentAPI completed batch operation
+635,2025-07-22 17:01:57,INFO,PaymentAPI,133,296,14,PaymentAPI processed request successfully in 133ms
+636,2025-07-22 11:35:57,INFO,PaymentAPI,122,313,13,Request validated and forwarded to PaymentAPI
+637,2025-07-22 09:56:27,INFO,PaymentAPI,139,283,16,PaymentAPI cache hit - data retrieved efficiently
+638,2025-07-22 17:40:27,ERROR,UserService,721,305,31,[ERROR] UserService authentication failed - invalid credentials
+639,2025-07-22 13:21:57,DEBUG,AuthService,169,328,19,[DEBUG] AuthService thread pool status: healthy
+640,2025-07-22 17:38:57,WARN,PaymentAPI,916,464,32,[WARN] PaymentAPI memory usage above 80%
+641,2025-07-22 12:45:27,DEBUG,PaymentAPI,185,236,15,[DEBUG] Cache statistics updated for PaymentAPI
+642,2025-07-22 11:37:57,INFO,OrderProcessor,122,193,15,OrderProcessor processed request successfully in 122ms
+643,2025-07-22 10:01:57,INFO,OrderProcessor,135,236,12,Request validated and forwarded to OrderProcessor
+644,2025-07-22 17:45:57,WARN,AuthService,735,571,26,[WARN] AuthService deprecated API endpoint called
+645,2025-07-22 12:50:27,INFO,UserService,163,267,20,Request validated and forwarded to UserService
+646,2025-07-22 13:37:57,DEBUG,OrderProcessor,178,297,16,[DEBUG] OrderProcessor configuration loaded successfully
+647,2025-07-22 17:46:57,ERROR,UserService,518,449,31,[ERROR] Timeout exception in UserService after 30 seconds
+648,2025-07-22 16:48:27,INFO,OrderProcessor,135,233,18,User session established for OrderProcessor
+649,2025-07-22 15:35:27,INFO,PaymentAPI,152,213,17,PaymentAPI completed batch operation
+650,2025-07-22 16:43:57,INFO,OrderProcessor,125,279,14,OrderProcessor processed request successfully in 125ms
+651,2025-07-22 11:20:27,INFO,UserService,147,289,16,UserService completed batch operation
+652,2025-07-22 16:50:27,INFO,AuthService,136,235,18,AuthService processed request successfully in 136ms
+653,2025-07-22 16:55:27,INFO,PaymentAPI,185,273,12,Request validated and forwarded to PaymentAPI
+654,2025-07-22 13:54:57,DEBUG,UserService,203,325,14,[DEBUG] UserService configuration loaded successfully
+655,2025-07-22 17:47:57,WARN,UserService,652,575,26,[WARN] UserService connection pool nearing capacity
+656,2025-07-22 16:38:27,INFO,AuthService,117,230,14,User session established for AuthService
+657,2025-07-22 14:32:57,INFO,OrderProcessor,127,145,15,OrderProcessor cache hit - data retrieved efficiently
+658,2025-07-22 17:47:27,ERROR,PaymentAPI,917,463,23,[ERROR] PaymentAPI failed to connect to database
+659,2025-07-22 11:04:27,INFO,PaymentAPI,153,274,9,PaymentAPI processed request successfully in 153ms
+660,2025-07-22 17:17:27,ERROR,AuthService,770,484,24,[ERROR] AuthService out of memory during large operation
+661,2025-07-22 10:59:27,INFO,AuthService,153,272,19,AuthService completed batch operation
+662,2025-07-22 16:23:57,INFO,UserService,143,298,16,UserService completed batch operation
+663,2025-07-22 17:59:57,WARN,PaymentAPI,952,228,31,[WARN] PaymentAPI retry attempt 3 of 5
+664,2025-07-22 16:00:57,INFO,PaymentAPI,170,249,10,Request validated and forwarded to PaymentAPI
+665,2025-07-22 10:38:57,INFO,PaymentAPI,124,263,10,PaymentAPI completed batch operation
+666,2025-07-22 11:36:27,DEBUG,AuthService,155,335,10,[DEBUG] Cache statistics updated for AuthService
+667,2025-07-22 15:27:27,INFO,OrderProcessor,133,326,14,OrderProcessor processed request successfully in 133ms
+668,2025-07-22 10:34:57,INFO,UserService,191,235,13,UserService cache hit - data retrieved efficiently
+669,2025-07-22 13:13:57,INFO,AuthService,170,276,19,User session established for AuthService
+670,2025-07-22 13:12:57,INFO,AuthService,161,263,12,AuthService cache hit - data retrieved efficiently
+671,2025-07-22 15:58:27,INFO,OrderProcessor,159,293,18,Request validated and forwarded to OrderProcessor
+672,2025-07-22 14:36:27,INFO,PaymentAPI,206,302,9,Request validated and forwarded to PaymentAPI
+673,2025-07-22 16:13:27,INFO,PaymentAPI,143,226,18,PaymentAPI completed batch operation
+674,2025-07-22 15:19:27,INFO,AuthService,183,288,18,Request validated and forwarded to AuthService
+675,2025-07-22 10:42:57,INFO,UserService,217,299,14,UserService completed batch operation
+676,2025-07-22 10:09:57,DEBUG,UserService,148,293,8,[DEBUG] UserService configuration loaded successfully
+677,2025-07-22 10:58:57,INFO,AuthService,120,328,22,AuthService completed batch operation
+678,2025-07-22 13:04:57,DEBUG,AuthService,185,277,23,[DEBUG] Query execution plan optimized for AuthService
+679,2025-07-22 17:35:57,ERROR,AuthService,907,303,23,[ERROR] Failed to parse JSON request in AuthService
+680,2025-07-22 11:26:57,INFO,AuthService,113,330,8,AuthService completed batch operation
+681,2025-07-22 15:12:27,INFO,UserService,119,225,17,Request validated and forwarded to UserService
+682,2025-07-22 16:44:57,DEBUG,UserService,198,223,13,[DEBUG] UserService connection pool stats: 5/20 active
+683,2025-07-22 16:04:27,INFO,OrderProcessor,207,275,12,OrderProcessor cache hit - data retrieved efficiently
+684,2025-07-22 09:47:27,INFO,OrderProcessor,169,274,13,OrderProcessor processed request successfully in 169ms
+685,2025-07-22 16:26:57,DEBUG,UserService,119,241,11,[DEBUG] Query execution plan optimized for UserService
+686,2025-07-22 10:01:27,INFO,PaymentAPI,179,255,14,PaymentAPI processed request successfully in 179ms
+687,2025-07-22 13:29:27,INFO,AuthService,133,163,19,AuthService completed batch operation
+688,2025-07-22 15:08:57,INFO,OrderProcessor,142,252,10,User session established for OrderProcessor
+689,2025-07-22 11:49:57,INFO,OrderProcessor,224,279,17,User session established for OrderProcessor
+690,2025-07-22 12:14:57,INFO,PaymentAPI,150,285,8,PaymentAPI processed request successfully in 150ms
+691,2025-07-22 15:56:27,INFO,OrderProcessor,152,272,15,OrderProcessor processed request successfully in 152ms
+692,2025-07-22 14:28:57,INFO,OrderProcessor,142,189,21,User session established for OrderProcessor
+693,2025-07-22 14:54:57,INFO,UserService,146,260,20,Request validated and forwarded to UserService
+694,2025-07-22 15:49:27,INFO,OrderProcessor,151,221,14,OrderProcessor cache hit - data retrieved efficiently
+695,2025-07-22 17:08:57,DEBUG,UserService,208,237,8,[DEBUG] UserService configuration loaded successfully
+696,2025-07-22 11:54:27,INFO,AuthService,129,346,12,Request validated and forwarded to AuthService
+697,2025-07-22 14:48:27,INFO,AuthService,185,307,13,User session established for AuthService
+698,2025-07-22 12:11:57,INFO,PaymentAPI,139,292,16,PaymentAPI completed batch operation
+699,2025-07-22 13:10:27,INFO,PaymentAPI,157,290,16,PaymentAPI processed request successfully in 157ms
+700,2025-07-22 10:58:27,DEBUG,OrderProcessor,166,233,11,[DEBUG] Query execution plan optimized for OrderProcessor
+701,2025-07-22 16:17:27,INFO,PaymentAPI,117,306,12,PaymentAPI cache hit - data retrieved efficiently
+702,2025-07-22 15:03:27,INFO,UserService,179,270,18,UserService completed batch operation
+703,2025-07-22 17:07:57,INFO,OrderProcessor,141,252,18,OrderProcessor cache hit - data retrieved efficiently
+704,2025-07-22 14:18:27,INFO,OrderProcessor,125,257,17,Request validated and forwarded to OrderProcessor
+705,2025-07-22 17:06:27,INFO,AuthService,212,253,13,Request validated and forwarded to AuthService
+706,2025-07-22 13:47:27,DEBUG,UserService,206,284,14,[DEBUG] UserService thread pool status: healthy
+707,2025-07-22 10:56:57,INFO,PaymentAPI,178,194,12,User session established for PaymentAPI
+708,2025-07-22 10:56:27,INFO,UserService,120,228,10,UserService completed batch operation
+709,2025-07-22 15:43:27,DEBUG,UserService,198,264,14,[DEBUG] UserService thread pool status: healthy
+710,2025-07-22 17:28:57,ERROR,UserService,831,401,21,[ERROR] Timeout exception in UserService after 30 seconds
+711,2025-07-22 15:52:57,INFO,AuthService,148,177,13,Request validated and forwarded to AuthService
+712,2025-07-22 15:12:57,INFO,PaymentAPI,129,266,14,PaymentAPI cache hit - data retrieved efficiently
+713,2025-07-22 12:37:27,INFO,PaymentAPI,189,295,11,PaymentAPI processed request successfully in 189ms
+714,2025-07-22 13:34:57,INFO,PaymentAPI,133,264,12,PaymentAPI processed request successfully in 133ms
+715,2025-07-22 12:25:57,INFO,PaymentAPI,120,202,12,PaymentAPI processed request successfully in 120ms
+716,2025-07-22 11:16:27,DEBUG,PaymentAPI,144,257,9,[DEBUG] PaymentAPI configuration loaded successfully
+717,2025-07-22 10:44:57,INFO,AuthService,218,249,13,AuthService completed batch operation
+718,2025-07-22 16:49:57,DEBUG,UserService,150,228,17,[DEBUG] Query execution plan optimized for UserService
+719,2025-07-22 14:47:27,INFO,AuthService,144,187,14,AuthService cache hit - data retrieved efficiently
+720,2025-07-22 10:54:57,INFO,PaymentAPI,191,286,18,PaymentAPI processed request successfully in 191ms
+721,2025-07-22 17:42:27,ERROR,AuthService,885,676,24,[ERROR] Timeout exception in AuthService after 30 seconds
+722,2025-07-22 11:21:57,DEBUG,UserService,199,227,16,[DEBUG] UserService configuration loaded successfully
+723,2025-07-22 14:47:57,INFO,OrderProcessor,179,227,12,Request validated and forwarded to OrderProcessor
+724,2025-07-22 12:02:57,INFO,OrderProcessor,140,252,12,OrderProcessor cache hit - data retrieved efficiently
+725,2025-07-22 12:09:57,INFO,PaymentAPI,186,295,14,PaymentAPI processed request successfully in 186ms
+726,2025-07-22 13:03:27,INFO,UserService,164,256,15,User session established for UserService
+727,2025-07-22 10:44:27,INFO,OrderProcessor,75,298,12,Request validated and forwarded to OrderProcessor
+728,2025-07-22 11:14:57,DEBUG,AuthService,159,295,13,[DEBUG] Cache statistics updated for AuthService
+729,2025-07-22 11:24:27,INFO,PaymentAPI,138,264,16,User session established for PaymentAPI
+730,2025-07-22 13:22:27,INFO,OrderProcessor,146,238,18,User session established for OrderProcessor
+731,2025-07-22 11:46:27,INFO,PaymentAPI,126,145,14,Request validated and forwarded to PaymentAPI
+732,2025-07-22 13:10:57,INFO,PaymentAPI,228,187,18,Request validated and forwarded to PaymentAPI
+733,2025-07-22 17:29:27,WARN,AuthService,580,546,17,[WARN] AuthService cache miss rate above 20%
+734,2025-07-22 16:05:57,INFO,OrderProcessor,104,307,15,OrderProcessor cache hit - data retrieved efficiently
+735,2025-07-22 17:16:27,WARN,AuthService,1018,565,28,[WARN] AuthService rate limiting applied to client
+736,2025-07-22 16:40:57,INFO,PaymentAPI,173,178,17,PaymentAPI cache hit - data retrieved efficiently
+737,2025-07-22 17:06:57,INFO,PaymentAPI,122,341,16,PaymentAPI cache hit - data retrieved efficiently
+738,2025-07-22 10:47:57,INFO,AuthService,166,249,13,AuthService processed request successfully in 166ms
+739,2025-07-22 15:01:57,INFO,AuthService,140,200,11,AuthService processed request successfully in 140ms
+740,2025-07-22 13:04:27,INFO,AuthService,169,290,15,User session established for AuthService
+741,2025-07-22 16:15:27,INFO,AuthService,143,203,9,AuthService cache hit - data retrieved efficiently
+742,2025-07-22 16:08:27,INFO,PaymentAPI,102,238,10,PaymentAPI cache hit - data retrieved efficiently
+743,2025-07-22 15:50:57,DEBUG,AuthService,155,229,15,[DEBUG] AuthService configuration loaded successfully
+744,2025-07-22 17:19:57,ERROR,UserService,578,569,25,[ERROR] UserService authentication failed - invalid credentials
+745,2025-07-22 11:32:57,DEBUG,OrderProcessor,162,240,15,[DEBUG] Cache statistics updated for OrderProcessor
+746,2025-07-22 15:03:57,INFO,PaymentAPI,137,343,19,PaymentAPI processed request successfully in 137ms
+747,2025-07-22 17:20:57,ERROR,OrderProcessor,769,450,26,[ERROR] OrderProcessor failed to connect to database
+748,2025-07-22 15:59:27,INFO,UserService,93,205,18,UserService cache hit - data retrieved efficiently
+749,2025-07-22 16:26:27,DEBUG,OrderProcessor,154,129,12,[DEBUG] OrderProcessor thread pool status: healthy
+750,2025-07-22 17:22:57,ERROR,UserService,760,530,23,[ERROR] Timeout exception in UserService after 30 seconds
+751,2025-07-22 14:55:27,INFO,AuthService,86,209,15,User session established for AuthService
+752,2025-07-22 17:00:27,INFO,AuthService,169,342,15,User session established for AuthService
+753,2025-07-22 16:03:27,INFO,PaymentAPI,182,287,16,PaymentAPI completed batch operation
+754,2025-07-22 12:56:27,INFO,UserService,118,255,15,Request validated and forwarded to UserService
+755,2025-07-22 17:49:27,ERROR,AuthService,1001,413,32,[ERROR] AuthService out of memory during large operation
+756,2025-07-22 13:57:57,INFO,AuthService,159,244,19,User session established for AuthService
+757,2025-07-22 11:56:57,INFO,UserService,123,279,16,UserService cache hit - data retrieved efficiently
+758,2025-07-22 16:32:57,INFO,AuthService,142,218,8,User session established for AuthService
+759,2025-07-22 13:23:57,DEBUG,AuthService,136,269,16,[DEBUG] AuthService connection pool stats: 5/20 active
+760,2025-07-22 13:51:27,INFO,UserService,136,267,19,Request validated and forwarded to UserService
+761,2025-07-22 10:39:27,DEBUG,PaymentAPI,120,297,18,[DEBUG] Cache statistics updated for PaymentAPI
+762,2025-07-22 15:28:57,INFO,UserService,205,232,11,UserService processed request successfully in 205ms
+763,2025-07-22 11:39:27,INFO,AuthService,182,305,11,AuthService cache hit - data retrieved efficiently
+764,2025-07-22 16:57:57,DEBUG,AuthService,116,214,19,[DEBUG] Query execution plan optimized for AuthService
+765,2025-07-22 14:46:57,INFO,AuthService,162,277,11,Request validated and forwarded to AuthService
+766,2025-07-22 15:18:57,DEBUG,PaymentAPI,120,319,13,[DEBUG] PaymentAPI configuration loaded successfully
+767,2025-07-22 12:49:57,INFO,PaymentAPI,166,345,11,PaymentAPI completed batch operation
+768,2025-07-22 17:53:57,ERROR,UserService,844,369,24,[ERROR] UserService out of memory during large operation
+769,2025-07-22 16:44:27,INFO,UserService,178,299,11,UserService completed batch operation
+770,2025-07-22 11:39:57,INFO,PaymentAPI,168,252,20,PaymentAPI processed request successfully in 168ms
+771,2025-07-22 16:15:57,DEBUG,PaymentAPI,130,330,15,[DEBUG] Query execution plan optimized for PaymentAPI
+772,2025-07-22 15:21:27,INFO,OrderProcessor,133,285,16,OrderProcessor completed batch operation
+773,2025-07-22 12:21:57,INFO,OrderProcessor,72,274,10,Request validated and forwarded to OrderProcessor
+774,2025-07-22 15:07:27,INFO,OrderProcessor,136,190,19,User session established for OrderProcessor
+775,2025-07-22 13:08:27,INFO,UserService,187,290,15,UserService cache hit - data retrieved efficiently
+776,2025-07-22 17:12:27,INFO,OrderProcessor,157,351,13,OrderProcessor cache hit - data retrieved efficiently
+777,2025-07-22 15:37:57,INFO,OrderProcessor,165,185,19,OrderProcessor cache hit - data retrieved efficiently
+778,2025-07-22 12:42:27,DEBUG,PaymentAPI,109,276,17,[DEBUG] PaymentAPI thread pool status: healthy
+779,2025-07-22 11:52:27,INFO,PaymentAPI,177,277,18,User session established for PaymentAPI
+780,2025-07-22 15:55:27,INFO,PaymentAPI,104,239,20,Request validated and forwarded to PaymentAPI
+781,2025-07-22 14:56:57,INFO,UserService,149,235,10,Request validated and forwarded to UserService
+782,2025-07-22 14:59:27,INFO,PaymentAPI,142,257,14,PaymentAPI cache hit - data retrieved efficiently
+783,2025-07-22 12:04:27,INFO,UserService,151,238,13,UserService completed batch operation
+784,2025-07-22 12:51:27,DEBUG,OrderProcessor,130,289,17,[DEBUG] OrderProcessor connection pool stats: 5/20 active
+785,2025-07-22 12:55:27,INFO,UserService,139,278,19,UserService completed batch operation
+786,2025-07-22 11:35:27,INFO,UserService,166,280,14,UserService cache hit - data retrieved efficiently
+787,2025-07-22 17:39:57,WARN,PaymentAPI,418,587,26,[WARN] PaymentAPI cache miss rate above 20%
+788,2025-07-22 16:30:27,DEBUG,PaymentAPI,114,232,16,[DEBUG] Cache statistics updated for PaymentAPI
+789,2025-07-22 13:39:27,INFO,UserService,115,296,11,UserService cache hit - data retrieved efficiently
+790,2025-07-22 12:36:57,INFO,UserService,158,279,18,UserService cache hit - data retrieved efficiently
+791,2025-07-22 13:55:57,INFO,UserService,136,290,18,UserService cache hit - data retrieved efficiently
+792,2025-07-22 15:02:57,INFO,AuthService,195,305,8,AuthService processed request successfully in 195ms
+793,2025-07-22 17:56:57,WARN,PaymentAPI,892,486,33,[WARN] PaymentAPI response time exceeded threshold
+794,2025-07-22 17:27:27,ERROR,PaymentAPI,827,713,19,[ERROR] PaymentAPI connection refused by external API
+795,2025-07-22 17:15:57,WARN,OrderProcessor,965,603,22,[WARN] OrderProcessor rate limiting applied to client
+796,2025-07-22 14:52:57,INFO,OrderProcessor,189,256,13,OrderProcessor processed request successfully in 189ms
+797,2025-07-22 16:50:57,INFO,UserService,146,209,18,Request validated and forwarded to UserService
+798,2025-07-22 16:24:57,INFO,UserService,93,279,14,Request validated and forwarded to UserService
+799,2025-07-22 15:05:57,DEBUG,UserService,159,317,14,[DEBUG] UserService connection pool stats: 5/20 active
+800,2025-07-22 16:46:27,INFO,PaymentAPI,149,231,16,PaymentAPI cache hit - data retrieved efficiently
+801,2025-07-22 14:21:27,INFO,PaymentAPI,79,193,20,PaymentAPI cache hit - data retrieved efficiently
+802,2025-07-22 17:41:57,ERROR,PaymentAPI,942,479,22,[ERROR] PaymentAPI connection refused by external API
+803,2025-07-22 14:31:57,DEBUG,OrderProcessor,245,272,14,[DEBUG] Cache statistics updated for OrderProcessor
+804,2025-07-22 16:20:57,DEBUG,OrderProcessor,158,212,17,[DEBUG] OrderProcessor configuration loaded successfully
+805,2025-07-22 10:25:57,INFO,PaymentAPI,115,190,14,PaymentAPI processed request successfully in 115ms
+806,2025-07-22 11:44:27,DEBUG,UserService,154,246,18,[DEBUG] UserService thread pool status: healthy
+807,2025-07-22 15:32:27,INFO,AuthService,118,265,17,User session established for AuthService
+808,2025-07-22 11:02:57,INFO,AuthService,166,202,11,AuthService cache hit - data retrieved efficiently
+809,2025-07-22 14:05:27,DEBUG,AuthService,77,280,9,[DEBUG] Cache statistics updated for AuthService
+810,2025-07-22 10:00:57,DEBUG,PaymentAPI,111,265,13,[DEBUG] PaymentAPI connection pool stats: 5/20 active
+811,2025-07-22 14:13:27,DEBUG,PaymentAPI,127,189,16,[DEBUG] Cache statistics updated for PaymentAPI
+812,2025-07-22 11:08:27,INFO,UserService,107,239,18,User session established for UserService
+813,2025-07-22 15:10:27,INFO,UserService,176,253,16,Request validated and forwarded to UserService
+814,2025-07-22 17:08:27,INFO,OrderProcessor,183,303,11,OrderProcessor completed batch operation
+815,2025-07-22 16:51:57,INFO,OrderProcessor,138,213,14,OrderProcessor completed batch operation
+816,2025-07-22 16:46:57,DEBUG,AuthService,158,238,12,[DEBUG] AuthService connection pool stats: 5/20 active
+817,2025-07-22 17:35:27,WARN,UserService,787,536,31,[WARN] UserService cache miss rate above 20%
+818,2025-07-22 15:49:57,INFO,PaymentAPI,200,285,18,PaymentAPI completed batch operation
+819,2025-07-22 10:30:57,INFO,AuthService,163,281,17,Request validated and forwarded to AuthService
+820,2025-07-22 14:24:57,INFO,OrderProcessor,191,304,16,OrderProcessor cache hit - data retrieved efficiently
+821,2025-07-22 11:43:27,DEBUG,UserService,155,357,15,[DEBUG] Cache statistics updated for UserService
+822,2025-07-22 15:54:27,INFO,UserService,107,289,21,User session established for UserService
+823,2025-07-22 14:30:27,DEBUG,PaymentAPI,176,283,20,[DEBUG] Query execution plan optimized for PaymentAPI
+824,2025-07-22 15:28:27,INFO,AuthService,161,233,9,AuthService cache hit - data retrieved efficiently
+825,2025-07-22 13:33:27,INFO,UserService,180,266,11,User session established for UserService
+826,2025-07-22 14:19:57,INFO,OrderProcessor,62,221,12,Request validated and forwarded to OrderProcessor
+827,2025-07-22 17:07:27,INFO,UserService,74,318,16,Request validated and forwarded to UserService
+828,2025-07-22 11:26:27,INFO,OrderProcessor,130,244,17,OrderProcessor processed request successfully in 130ms
+829,2025-07-22 12:59:27,INFO,PaymentAPI,159,241,13,PaymentAPI cache hit - data retrieved efficiently
+830,2025-07-22 16:20:27,INFO,UserService,178,284,14,UserService processed request successfully in 178ms
+831,2025-07-22 13:01:57,INFO,OrderProcessor,158,284,15,OrderProcessor completed batch operation
+832,2025-07-22 16:06:27,INFO,OrderProcessor,95,268,17,OrderProcessor cache hit - data retrieved efficiently
+833,2025-07-22 16:47:27,INFO,AuthService,125,217,22,User session established for AuthService
+834,2025-07-22 11:31:57,INFO,PaymentAPI,113,225,12,User session established for PaymentAPI
+835,2025-07-22 09:45:27,INFO,UserService,182,269,19,User session established for UserService
+836,2025-07-22 16:07:27,INFO,OrderProcessor,158,263,12,OrderProcessor processed request successfully in 158ms
+837,2025-07-22 15:04:27,INFO,OrderProcessor,162,274,14,OrderProcessor cache hit - data retrieved efficiently
+838,2025-07-22 17:27:57,ERROR,PaymentAPI,999,641,30,[ERROR] Timeout exception in PaymentAPI after 30 seconds
+839,2025-07-22 14:49:27,INFO,PaymentAPI,167,176,13,User session established for PaymentAPI
+840,2025-07-22 15:52:27,INFO,OrderProcessor,131,273,12,User session established for OrderProcessor
+841,2025-07-22 14:16:27,INFO,AuthService,162,228,18,AuthService completed batch operation
+842,2025-07-22 15:45:57,DEBUG,OrderProcessor,101,208,18,[DEBUG] Cache statistics updated for OrderProcessor
+843,2025-07-22 15:24:57,INFO,OrderProcessor,142,295,7,OrderProcessor processed request successfully in 142ms
+844,2025-07-22 10:32:27,INFO,OrderProcessor,185,275,13,OrderProcessor cache hit - data retrieved efficiently
+845,2025-07-22 16:25:27,INFO,AuthService,133,258,12,Request validated and forwarded to AuthService
+846,2025-07-22 15:46:57,INFO,UserService,124,187,15,UserService cache hit - data retrieved efficiently
+847,2025-07-22 14:29:57,INFO,OrderProcessor,103,283,13,Request validated and forwarded to OrderProcessor
+848,2025-07-22 13:06:27,INFO,AuthService,161,148,14,User session established for AuthService
+849,2025-07-22 13:54:27,INFO,AuthService,149,343,17,AuthService cache hit - data retrieved efficiently
+850,2025-07-22 10:06:57,INFO,OrderProcessor,162,281,13,Request validated and forwarded to OrderProcessor
+851,2025-07-22 09:59:27,INFO,OrderProcessor,148,285,13,User session established for OrderProcessor
+852,2025-07-22 16:12:57,INFO,PaymentAPI,128,300,14,PaymentAPI completed batch operation
+853,2025-07-22 16:42:57,INFO,OrderProcessor,143,243,14,OrderProcessor completed batch operation
+854,2025-07-22 11:23:27,INFO,AuthService,167,194,12,AuthService processed request successfully in 167ms
+855,2025-07-22 10:50:27,DEBUG,AuthService,153,260,10,[DEBUG] AuthService thread pool status: healthy
+856,2025-07-22 09:56:57,INFO,OrderProcessor,116,260,14,OrderProcessor processed request successfully in 116ms
+857,2025-07-22 17:03:27,INFO,UserService,144,275,14,UserService cache hit - data retrieved efficiently
+858,2025-07-22 11:38:27,INFO,AuthService,127,244,15,AuthService processed request successfully in 127ms
+859,2025-07-22 13:47:57,DEBUG,UserService,196,252,13,[DEBUG] Query execution plan optimized for UserService
+860,2025-07-22 16:09:27,INFO,UserService,135,215,15,UserService completed batch operation
+861,2025-07-22 12:52:27,DEBUG,AuthService,151,297,10,[DEBUG] AuthService connection pool stats: 5/20 active
+862,2025-07-22 12:07:27,INFO,OrderProcessor,121,326,9,OrderProcessor completed batch operation
+863,2025-07-22 13:12:27,INFO,OrderProcessor,172,237,12,Request validated and forwarded to OrderProcessor
+864,2025-07-22 15:20:27,INFO,OrderProcessor,84,245,20,User session established for OrderProcessor
+865,2025-07-22 12:58:57,INFO,UserService,141,298,14,UserService processed request successfully in 141ms
+866,2025-07-22 14:39:27,INFO,OrderProcessor,164,279,16,OrderProcessor processed request successfully in 164ms
+867,2025-07-22 13:52:27,DEBUG,AuthService,165,249,10,[DEBUG] AuthService configuration loaded successfully
+868,2025-07-22 10:52:27,INFO,PaymentAPI,99,286,18,PaymentAPI processed request successfully in 99ms
+869,2025-07-22 10:14:27,DEBUG,AuthService,179,222,14,[DEBUG] Cache statistics updated for AuthService
+870,2025-07-22 13:38:57,DEBUG,UserService,194,198,14,[DEBUG] Cache statistics updated for UserService
+871,2025-07-22 15:06:57,INFO,AuthService,185,224,13,User session established for AuthService
+872,2025-07-22 10:47:27,INFO,OrderProcessor,191,134,16,OrderProcessor processed request successfully in 191ms
+873,2025-07-22 17:51:27,ERROR,OrderProcessor,782,463,23,[ERROR] Timeout exception in OrderProcessor after 30 seconds
+874,2025-07-22 14:03:27,INFO,AuthService,194,280,16,AuthService completed batch operation
+875,2025-07-22 16:42:27,INFO,PaymentAPI,133,243,15,PaymentAPI cache hit - data retrieved efficiently
+876,2025-07-22 17:44:27,ERROR,PaymentAPI,1133,513,31,[ERROR] PaymentAPI failed to connect to database
+877,2025-07-22 10:15:27,INFO,OrderProcessor,212,216,13,Request validated and forwarded to OrderProcessor
+878,2025-07-22 16:29:27,INFO,PaymentAPI,130,343,16,PaymentAPI processed request successfully in 130ms
+879,2025-07-22 09:50:27,INFO,OrderProcessor,164,210,11,User session established for OrderProcessor
+880,2025-07-22 11:01:27,INFO,PaymentAPI,102,307,12,Request validated and forwarded to PaymentAPI
+881,2025-07-22 10:03:27,INFO,PaymentAPI,195,217,15,PaymentAPI cache hit - data retrieved efficiently
+882,2025-07-22 13:49:27,INFO,AuthService,154,284,17,AuthService completed batch operation
+883,2025-07-22 12:52:57,INFO,OrderProcessor,158,225,13,User session established for OrderProcessor
+884,2025-07-22 11:16:57,INFO,OrderProcessor,146,283,13,Request validated and forwarded to OrderProcessor
+885,2025-07-22 16:04:57,INFO,UserService,148,310,12,Request validated and forwarded to UserService
+886,2025-07-22 11:31:27,INFO,UserService,186,192,20,Request validated and forwarded to UserService
+887,2025-07-22 16:18:57,INFO,PaymentAPI,150,231,13,User session established for PaymentAPI
+888,2025-07-22 10:09:27,DEBUG,PaymentAPI,147,296,15,[DEBUG] PaymentAPI thread pool status: healthy
+889,2025-07-22 17:02:27,INFO,AuthService,126,280,24,AuthService processed request successfully in 126ms
+890,2025-07-22 12:31:57,INFO,OrderProcessor,143,201,12,Request validated and forwarded to OrderProcessor
+891,2025-07-22 15:57:27,DEBUG,PaymentAPI,140,279,12,[DEBUG] PaymentAPI thread pool status: healthy
+892,2025-07-22 15:42:57,INFO,UserService,178,300,15,Request validated and forwarded to UserService
+893,2025-07-22 15:45:27,INFO,AuthService,152,285,8,User session established for AuthService
+894,2025-07-22 12:10:57,INFO,AuthService,194,300,19,Request validated and forwarded to AuthService
+895,2025-07-22 15:33:57,INFO,AuthService,201,275,14,AuthService completed batch operation
+896,2025-07-22 11:48:57,INFO,AuthService,85,285,15,AuthService processed request successfully in 85ms
+897,2025-07-22 15:46:27,INFO,UserService,142,279,17,User session established for UserService
+898,2025-07-22 13:33:57,INFO,OrderProcessor,167,259,18,OrderProcessor cache hit - data retrieved efficiently
+899,2025-07-22 13:30:57,INFO,OrderProcessor,155,223,16,OrderProcessor processed request successfully in 155ms
+900,2025-07-22 18:01:27,WARN,PaymentAPI,1049,563,24,[WARN] PaymentAPI deprecated API endpoint called
+901,2025-07-22 16:30:57,INFO,OrderProcessor,177,248,12,OrderProcessor processed request successfully in 177ms
+902,2025-07-22 16:54:27,INFO,PaymentAPI,170,265,18,PaymentAPI cache hit - data retrieved efficiently
+903,2025-07-22 11:57:57,INFO,AuthService,149,273,16,AuthService completed batch operation
+904,2025-07-22 11:23:57,INFO,OrderProcessor,198,182,14,OrderProcessor processed request successfully in 198ms
+905,2025-07-22 11:03:57,INFO,UserService,190,296,14,User session established for UserService
+906,2025-07-22 14:20:57,INFO,AuthService,177,328,14,User session established for AuthService
+907,2025-07-22 15:47:57,INFO,UserService,144,194,18,UserService cache hit - data retrieved efficiently
+908,2025-07-22 13:03:57,DEBUG,PaymentAPI,172,222,17,[DEBUG] Query execution plan optimized for PaymentAPI
+909,2025-07-22 15:34:27,INFO,UserService,146,346,15,UserService cache hit - data retrieved efficiently
+910,2025-07-22 13:41:27,INFO,OrderProcessor,147,306,13,User session established for OrderProcessor
+911,2025-07-22 16:33:57,INFO,AuthService,157,287,21,AuthService cache hit - data retrieved efficiently
+912,2025-07-22 16:08:57,DEBUG,UserService,176,334,13,[DEBUG] UserService connection pool stats: 5/20 active
+913,2025-07-22 10:35:57,INFO,PaymentAPI,153,263,14,Request validated and forwarded to PaymentAPI
+914,2025-07-22 14:25:57,INFO,AuthService,126,225,14,AuthService cache hit - data retrieved efficiently
+915,2025-07-22 12:57:57,DEBUG,AuthService,116,236,18,[DEBUG] AuthService thread pool status: healthy
+916,2025-07-22 09:43:57,DEBUG,UserService,181,260,14,[DEBUG] UserService connection pool stats: 5/20 active
+917,2025-07-22 17:31:57,WARN,AuthService,848,656,14,[WARN] AuthService response time exceeded threshold
+918,2025-07-22 17:54:27,WARN,UserService,730,326,29,[WARN] UserService connection pool nearing capacity
+919,2025-07-22 14:23:57,INFO,PaymentAPI,128,273,13,Request validated and forwarded to PaymentAPI
+920,2025-07-22 10:23:27,DEBUG,PaymentAPI,156,287,15,[DEBUG] PaymentAPI configuration loaded successfully
+921,2025-07-22 11:25:57,INFO,AuthService,119,268,15,AuthService cache hit - data retrieved efficiently
+922,2025-07-22 10:00:27,DEBUG,OrderProcessor,152,288,8,[DEBUG] OrderProcessor thread pool status: healthy
+923,2025-07-22 16:10:57,INFO,PaymentAPI,176,186,16,User session established for PaymentAPI
+924,2025-07-22 13:57:27,DEBUG,AuthService,120,270,14,[DEBUG] AuthService thread pool status: healthy
+925,2025-07-22 13:16:57,DEBUG,UserService,167,332,20,[DEBUG] UserService thread pool status: healthy
+926,2025-07-22 13:30:27,INFO,OrderProcessor,133,181,18,OrderProcessor cache hit - data retrieved efficiently
+927,2025-07-22 12:46:27,DEBUG,OrderProcessor,179,355,12,[DEBUG] OrderProcessor connection pool stats: 5/20 active
+928,2025-07-22 10:28:57,INFO,PaymentAPI,159,231,17,PaymentAPI completed batch operation
+929,2025-07-22 12:32:57,INFO,PaymentAPI,181,198,13,PaymentAPI cache hit - data retrieved efficiently
+930,2025-07-22 17:11:57,DEBUG,OrderProcessor,104,241,14,[DEBUG] Cache statistics updated for OrderProcessor
+931,2025-07-22 14:25:27,INFO,OrderProcessor,130,239,15,User session established for OrderProcessor
+932,2025-07-22 12:35:57,INFO,OrderProcessor,131,206,14,OrderProcessor processed request successfully in 131ms
+933,2025-07-22 16:11:27,INFO,UserService,141,274,17,Request validated and forwarded to UserService
+934,2025-07-22 11:43:57,DEBUG,AuthService,140,256,14,[DEBUG] Query execution plan optimized for AuthService
+935,2025-07-22 09:49:57,INFO,UserService,161,319,17,UserService processed request successfully in 161ms
+936,2025-07-22 12:20:57,INFO,PaymentAPI,172,255,13,User session established for PaymentAPI
+937,2025-07-22 14:43:27,INFO,UserService,211,193,11,User session established for UserService
+938,2025-07-22 12:56:57,INFO,PaymentAPI,91,289,12,User session established for PaymentAPI
+939,2025-07-22 11:59:57,DEBUG,PaymentAPI,174,286,14,[DEBUG] PaymentAPI thread pool status: healthy
+940,2025-07-22 11:06:27,INFO,UserService,151,196,16,UserService processed request successfully in 151ms
+941,2025-07-22 16:43:27,INFO,AuthService,99,252,18,AuthService completed batch operation
+942,2025-07-22 17:59:27,WARN,PaymentAPI,977,396,30,[WARN] PaymentAPI connection pool nearing capacity
+943,2025-07-22 15:06:27,INFO,UserService,114,310,11,UserService processed request successfully in 114ms
+944,2025-07-22 16:32:27,INFO,AuthService,191,265,15,User session established for AuthService
+945,2025-07-22 13:45:27,INFO,PaymentAPI,143,244,10,Request validated and forwarded to PaymentAPI
+946,2025-07-22 17:53:27,WARN,AuthService,1171,728,21,[WARN] AuthService cache miss rate above 20%
+947,2025-07-22 13:55:27,INFO,UserService,199,191,11,UserService completed batch operation
+948,2025-07-22 16:38:57,INFO,AuthService,137,246,16,AuthService completed batch operation
+949,2025-07-22 11:44:57,INFO,AuthService,145,238,15,Request validated and forwarded to AuthService
+950,2025-07-22 14:26:27,INFO,PaymentAPI,135,201,16,PaymentAPI cache hit - data retrieved efficiently
+951,2025-07-22 17:00:57,INFO,UserService,165,239,8,UserService cache hit - data retrieved efficiently
+952,2025-07-22 14:24:27,INFO,AuthService,144,284,16,AuthService processed request successfully in 144ms
+953,2025-07-22 15:26:27,INFO,PaymentAPI,121,276,13,Request validated and forwarded to PaymentAPI
+954,2025-07-22 11:17:57,INFO,UserService,145,311,16,User session established for UserService
+955,2025-07-22 16:14:27,INFO,PaymentAPI,146,353,10,PaymentAPI processed request successfully in 146ms
+956,2025-07-22 15:32:57,INFO,OrderProcessor,117,303,12,Request validated and forwarded to OrderProcessor
+957,2025-07-22 13:40:57,DEBUG,UserService,94,210,11,[DEBUG] UserService configuration loaded successfully
+958,2025-07-22 15:23:57,INFO,UserService,136,328,8,UserService processed request successfully in 136ms
+959,2025-07-22 13:58:27,INFO,PaymentAPI,172,216,17,User session established for PaymentAPI
+960,2025-07-22 10:12:27,INFO,AuthService,152,254,8,AuthService cache hit - data retrieved efficiently
+961,2025-07-22 13:40:27,INFO,OrderProcessor,128,199,21,OrderProcessor cache hit - data retrieved efficiently
+962,2025-07-22 14:23:27,INFO,OrderProcessor,150,295,21,OrderProcessor cache hit - data retrieved efficiently
+963,2025-07-22 16:51:27,INFO,AuthService,147,254,17,Request validated and forwarded to AuthService
+964,2025-07-22 15:56:57,INFO,AuthService,106,271,11,AuthService processed request successfully in 106ms
+965,2025-07-22 11:49:27,DEBUG,PaymentAPI,161,176,9,[DEBUG] PaymentAPI connection pool stats: 5/20 active
+966,2025-07-22 09:53:57,INFO,AuthService,138,267,15,AuthService completed batch operation
+967,2025-07-22 12:19:57,DEBUG,UserService,95,331,13,[DEBUG] UserService thread pool status: healthy
+968,2025-07-22 13:32:57,INFO,AuthService,186,205,12,AuthService completed batch operation
+969,2025-07-22 11:03:27,INFO,PaymentAPI,156,178,16,PaymentAPI cache hit - data retrieved efficiently
+970,2025-07-22 12:01:27,INFO,OrderProcessor,150,232,16,OrderProcessor completed batch operation
+971,2025-07-22 17:40:57,ERROR,OrderProcessor,1000,514,19,[ERROR] OrderProcessor authentication failed - invalid credentials
+972,2025-07-22 11:18:57,DEBUG,AuthService,216,291,15,[DEBUG] AuthService connection pool stats: 5/20 active
+973,2025-07-22 12:55:57,DEBUG,AuthService,124,339,17,[DEBUG] Query execution plan optimized for AuthService
+974,2025-07-22 16:25:57,INFO,AuthService,152,283,14,Request validated and forwarded to AuthService
+975,2025-07-22 13:09:57,INFO,AuthService,201,286,15,Request validated and forwarded to AuthService
+976,2025-07-22 13:48:57,INFO,OrderProcessor,116,239,17,OrderProcessor completed batch operation
+977,2025-07-22 12:34:57,INFO,UserService,135,222,16,UserService completed batch operation
+978,2025-07-22 16:07:57,DEBUG,UserService,165,257,18,[DEBUG] Query execution plan optimized for UserService
+979,2025-07-22 12:17:27,INFO,AuthService,73,211,12,AuthService cache hit - data retrieved efficiently
+980,2025-07-22 15:13:57,DEBUG,PaymentAPI,155,231,13,[DEBUG] Query execution plan optimized for PaymentAPI
+981,2025-07-22 10:48:27,INFO,OrderProcessor,167,327,9,OrderProcessor completed batch operation
+982,2025-07-22 15:14:57,INFO,PaymentAPI,164,286,13,PaymentAPI completed batch operation
+983,2025-07-22 16:58:57,INFO,OrderProcessor,154,228,15,OrderProcessor processed request successfully in 154ms
+984,2025-07-22 10:32:57,INFO,PaymentAPI,113,230,14,User session established for PaymentAPI
+985,2025-07-22 12:49:27,INFO,UserService,189,239,18,Request validated and forwarded to UserService
+986,2025-07-22 10:26:57,INFO,OrderProcessor,115,265,15,Request validated and forwarded to OrderProcessor
+987,2025-07-22 13:32:27,INFO,OrderProcessor,211,209,20,OrderProcessor completed batch operation
+988,2025-07-22 12:28:27,INFO,UserService,136,230,14,User session established for UserService
+989,2025-07-22 11:30:27,INFO,PaymentAPI,90,257,14,PaymentAPI completed batch operation
+990,2025-07-22 13:36:27,INFO,OrderProcessor,144,339,18,OrderProcessor cache hit - data retrieved efficiently
+991,2025-07-22 10:43:57,DEBUG,UserService,140,265,11,[DEBUG] Cache statistics updated for UserService
+992,2025-07-22 14:50:27,DEBUG,PaymentAPI,155,349,14,[DEBUG] PaymentAPI configuration loaded successfully
+993,2025-07-22 09:53:27,INFO,AuthService,166,308,18,User session established for AuthService
+994,2025-07-22 15:33:27,INFO,PaymentAPI,178,204,14,User session established for PaymentAPI
+995,2025-07-22 10:18:57,INFO,UserService,207,302,18,UserService processed request successfully in 207ms
+996,2025-07-22 10:36:27,INFO,UserService,144,214,15,UserService completed batch operation
+997,2025-07-22 11:58:27,DEBUG,UserService,182,240,16,[DEBUG] Cache statistics updated for UserService
+998,2025-07-22 16:53:27,INFO,PaymentAPI,166,238,17,PaymentAPI processed request successfully in 166ms
+999,2025-07-22 13:20:57,INFO,OrderProcessor,150,281,17,OrderProcessor processed request successfully in 150ms
+1000,2025-07-22 10:34:27,INFO,UserService,141,221,17,UserService completed batch operation
