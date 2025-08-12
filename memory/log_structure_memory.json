@@ -1,119 +1,35 @@
 {
-  "06520421324f301d1dab58e626ac7b0ed41916933d9a5e6d42481313224eea24": {
-    "log_level_column": "Level",
-    "timestamp_column": null,
-    "message_column": "Message",
+  "cfb1c44e5db9b43e803be143a5567d8b5ebf8b09ee235f358c6cdb4c0edbc2bf": {
+    "log_level_column": "level",
+    "timestamp_column": "timestamp",
+    "lineID_column": "lineID",
+    "message_column": null,
     "numerical_metric_columns": [
-      "ResponseTime_ms",
-      "MemoryUsage_MB",
-      "ThreadCount"
+      "response_time_ms",
+      "memory_usage_mb",
+      "thread_count"
     ],
     "error_status_columns": [],
     "log_level_values": [
-      "ERROR",
       "INFO",
+      "DEBUG",
       "WARN",
-      "CRITICAL",
-      "DEBUG"
-    ]
-  },
-  "5a6c194b9814b1e631f936e374d683a9f71d6f85f6dd5ce2d32c7a7f04867d38": {
-    "log_level_column": null,
-    "timestamp_column": null,
-    "message_column": null,
-    "numerical_metric_columns": [
-      " Destination Port",
-      " Flow Duration",
-      " Total Fwd Packets",
-      " Total Backward Packets",
-      "Total Length of Fwd Packets",
-      " Total Length of Bwd Packets",
-      " Fwd Packet Length Max",
-      " Fwd Packet Length Min",
-      " Fwd Packet Length Mean",
-      " Fwd Packet Length Std",
-      "Bwd Packet Length Max",
-      " Bwd Packet Length Min",
-      " Bwd Packet Length Mean",
-      " Bwd Packet Length Std",
-      "Flow Bytes/s",
-      " Flow Packets/s",
-      " Flow IAT Mean",
-      " Flow IAT Std",
-      " Flow IAT Max",
-      " Flow IAT Min",
-      "Fwd IAT Total",
-      " Fwd IAT Mean",
-      " Fwd IAT Std",
-      " Fwd IAT Max",
-      " Fwd IAT Min",
-      "Bwd IAT Total",
-      " Bwd IAT Mean",
-      " Bwd IAT Std",
-      " Bwd IAT Max",
-      " Bwd IAT Min",
-      "Fwd PSH Flags",
-      " Bwd PSH Flags",
-      " Fwd URG Flags",
-      " Bwd URG Flags",
-      " Fwd Header Length",
-      " Bwd Header Length",
-      "Fwd Packets/s",
-      " Bwd Packets/s",
-      " Min Packet Length",
-      " Max Packet Length",
-      " Packet Length Mean",
-      " Packet Length Std",
-      " Packet Length Variance",
-      "FIN Flag Count",
-      " SYN Flag Count",
-      " RST Flag Count",
-      " PSH Flag Count",
-      " ACK Flag Count",
-      " URG Flag Count",
-      " CWE Flag Count",
-      " ECE Flag Count",
-      " Down/Up Ratio",
-      " Average Packet Size",
-      " Avg Fwd Segment Size",
-      " Avg Bwd Segment Size",
-      " Fwd Header Length.1",
-      "Fwd Avg Bytes/Bulk",
-      " Fwd Avg Packets/Bulk",
-      " Fwd Avg Bulk Rate",
-      " Bwd Avg Bytes/Bulk",
-      " Bwd Avg Packets/Bulk",
-      "Bwd Avg Bulk Rate",
-      "Subflow Fwd Packets",
-      " Subflow Fwd Bytes",
-      " Subflow Bwd Packets",
-      " Subflow Bwd Bytes",
-      "Init_Win_bytes_forward",
-      " Init_Win_bytes_backward",
-      " act_data_pkt_fwd",
-      " min_seg_size_forward",
-      "Active Mean",
-      " Active Std",
-      " Active Max",
-      " Active Min",
-      "Idle Mean",
-      " Idle Std",
-      " Idle Max",
-      " Idle Min"
+      "ERROR"
     ],
-    "error_status_columns": []
+    "detection_approach": "pure_heuristic"
   },
-  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": {
-    "log_level_column": null,
-    "timestamp_column": null,
-    "message_column": "Message",
-    "numerical_metric_columns": [
-      "ResponseTime_ms",
-      "MemoryUsage_MB",
-      "ThreadCount"
+  "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911": {
+    "log_level_column": "level",
+    "timestamp_column": "time",
+    "lineID_column": null,
+    "message_column": "content",
+    "numerical_metric_columns": [],
+    "error_status_columns": [],
+    "log_level_values": [
+      "notice",
+      "error"
     ],
-    "error_status_columns": [
-      "RequestID"
-    ]
+    "detection_approach": "pure_heuristic",
+    "has_new_log_values": false
   }
 }

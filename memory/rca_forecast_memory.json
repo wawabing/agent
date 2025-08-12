@@ -1,0 +1,28 @@
+{
+  "cfb1c44e5db9b43e803be143a5567d8b5ebf8b09ee235f358c6cdb4c0edbc2bf": [
+    {
+      "feature": "response_time_ms",
+      "pattern": "RISING_TREND",
+      "slope_threshold": 44.611999999999995,
+      "forecast_rule": "Alert when response_time_ms increases by >44.612 per time unit over 11 time steps",
+      "confidence": "Medium",
+      "mean_slope": 44.611999999999995
+    },
+    {
+      "feature": "memory_usage_mb",
+      "pattern": "RISING_TREND",
+      "slope_threshold": 27.532181818181815,
+      "forecast_rule": "Alert when memory_usage_mb increases by >27.532 per time unit over 11 time steps",
+      "confidence": "Medium",
+      "mean_slope": 27.532181818181815
+    },
+    {
+      "feature": "thread_count",
+      "pattern": "RISING_TREND",
+      "slope_threshold": 1.560909090909091,
+      "forecast_rule": "Alert when thread_count increases by >1.561 per time unit over 11 time steps",
+      "confidence": "Medium",
+      "mean_slope": 1.560909090909091
+    }
+  ]
+}

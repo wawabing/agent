@@ -1,14 +1,1 @@
-{
-  "5a6c194b9814b1e631f936e374d683a9f71d6f85f6dd5ce2d32c7a7f04867d38": {
-    "contamination": 0.01,
-    "max_features": 0.75,
-    "max_samples": 0.5,
-    "n_estimators": 100
-  },
-  "bbfb5c28dee62b361879de051ec3473714d150e5ee6970f768637a0ba221b3a3": {
-    "contamination": 0.3,
-    "max_features": 0.5,
-    "max_samples": 1.0,
-    "n_estimators": 200
-  }
-}
+{}

@@ -6,8 +6,10 @@ from typing import Optional, Dict, Any, List, Callable, TypedDict
 import hashlib
 from dotenv import load_dotenv
 from sklearn.ensemble import IsolationForest
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, DBSCAN
 from sklearn.decomposition import PCA
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 from scipy.io import arff
 import re
 from sklearn.preprocessing import OneHotEncoder
@@ -395,14 +397,16 @@ class AgentDetector:
         Please identify the following (respond with JSON only):
         1. Which column (if any) contains log levels like INFO, WARN, ERROR, DEBUG?
         2. Which column (if any) contains timestamp information?
-        3. Which column (if any) contains the main message or content of the log?
-        4. Which columns (if any) contain numerical metrics that might indicate anomalies?
-        5. Are there any columns that appear to contain error codes or status information?
+        3. Which column (if any) contains line ID / structural information like LineID, ID etc?
+        4. Which column (if any) contains the main message or content of the log?
+        5. Which columns (if any) contain numerical metrics that might indicate anomalies?
+        6. Are there any columns that appear to contain error codes or status information?
 
         Format your response strictly as JSON with the following structure:
         {{
         "log_level_column": "column_name or null if none exists",
         "timestamp_column": "column_name or null if none exists",
+        "lineID_column": "column_name or null if none exists",
         "message_column": "column_name or null if none exists",
         "numerical_metric_columns": ["column1", "column2", ...],
         "error_status_columns": ["column1", "column2", ...]
@@ -420,9 +424,7 @@ class AgentDetector:
                 max_tokens=1000,
                 temperature=0
             )
-            
-            print(f"[BEDROCK:RESPONSE] Raw response: {response[:200]}...")
-            
+                        
             # Clean the response to extract JSON
             response = response.strip()
             
@@ -472,10 +474,26 @@ class AgentDetector:
                 "error_status_columns": []
             }, existed
 
-    def generate_comprehensive_log_level_heuristics(self, df, log_structure):
+    def update_log_structure_with_detection_approach(self, schema_id: str, detection_approach: str):
+        """
+        Update the log structure memory with the detection approach used.
+        This ensures RCA agent knows exactly which method was used for detection.
+        
+        Args:
+            schema_id: Schema identifier
+            detection_approach: One of 'pure_heuristic', 'hybrid_ml_heuristic', 'pure_ml'
+        """
+        if schema_id in self.log_structure_memory:
+            self.log_structure_memory[schema_id]["detection_approach"] = detection_approach
+            self._save_memory(self.log_structure_memory, "log_structure")
+            print(f"[LOG_STRUCTURE:APPROACH] Updated detection approach for {schema_id}: {detection_approach}")
+        else:
+            print(f"[LOG_STRUCTURE:WARNING] No log structure found for schema {schema_id} - cannot update detection approach")
+
+    def generate_comprehensive_log_level_heuristics(self, df, log_structure, schema_id=None):
         """
         Create a comprehensive compound heuristic from ALL unique values in the log level column.
-        This is called the first time we see data with a log level column.
+        This is called the first time we see data with a log level column OR when new values are found.
         """
         log_level_column = log_structure.get("log_level_column")
         if not log_level_column or log_level_column not in df.columns:
@@ -484,24 +502,60 @@ class AgentDetector:
 
         # Get unique values in the log level column
         unique_values = df[log_level_column].unique().tolist()
-        print(f"[LOG_LEVEL] Found {len(unique_values)} unique values: {unique_values}")
+        stored_values = log_structure.get("log_level_values", [])
+        
+        print(f"[LOG_LEVEL] Current dataset has {len(unique_values)} unique log level values: {unique_values}")
+        print(f"[LOG_LEVEL] Stored values from memory: {stored_values}")
+        
+        # Use all values from memory (which includes both old and new values)
+        all_values = list(set(stored_values))  # Remove duplicates while preserving order
+        
+        # Check if we have an existing comprehensive heuristic for this schema
+        existing_comprehensive = None
+        if schema_id and schema_id in self.heuristic_memory:
+            existing_heuristics = self.heuristic_memory[schema_id]
+            for heuristic_entry in existing_heuristics:
+                rule = heuristic_entry.get("rule", {})
+                if rule.get("comprehensive", False):
+                    existing_comprehensive = rule
+                    print(f"[LOG_LEVEL] Found existing comprehensive rule with {len(rule.get('anomalous_values', []))} anomalous values")
+                    break
+
+        # If we have new values and an existing comprehensive rule, merge the classifications
+        new_values_only = []
+        if existing_comprehensive:
+            known_anomalous = set(existing_comprehensive.get("anomalous_values", []))
+            known_normal = set(existing_comprehensive.get("normal_values", []))
+            known_all = known_anomalous.union(known_normal)
+            
+            new_values_only = [v for v in all_values if v not in known_all]
+            if new_values_only:
+                print(f"[LOG_LEVEL] Found {len(new_values_only)} NEW values that need classification: {new_values_only}")
+            else:
+                print(f"[LOG_LEVEL] No new values to classify - using existing comprehensive rule")
+                return [existing_comprehensive]
+
+        # Determine which values need LLM classification
+        values_to_classify = new_values_only if new_values_only else all_values
+        
+        print(f"[LOG_LEVEL] Classifying {len(values_to_classify)} values: {values_to_classify}")
 
         prompt = f"""You are analyzing log data where the column '{log_level_column}' contains log severity levels.
         
-        The unique values found in this column are: {unique_values}
+        The values that need classification are: {values_to_classify}
         
         Please classify EVERY value as either:
-        - ANOMALOUS: Indicates something went wrong (errors, failures, critical issues, warnings)
-        - NORMAL: Indicates normal operation (info, debug, trace messages)
+        - ANOMALOUS: Indicates something went wrong (errors, failures, critical issues)
+        - NORMAL: Indicates normal operation (info, debug, trace messages, warnings)
         
         Consider common log level conventions:
-        - ERROR, FATAL, CRITICAL, WARN, WARNING typically indicate problems or potential issues
-        - INFO, DEBUG, TRACE typically indicate normal operation
+        - ERROR, FATAL, CRITICAL typically indicate problems or potential issues
+        - INFO, DEBUG, TRACE, WARN, WARNING typically indicate normal operation
         
         Important: 
-        1. WARN/WARNING should be classified as ANOMALOUS since warnings indicate potential problems
+        1. WARN/WARNING should be classified as NORMAL since warnings are not errors
         2. ALL values must be classified (either anomalous or normal)
-        3. Create a COMPREHENSIVE rule covering all possible log levels
+        3. Only classify the specific values provided above
         
         Respond with JSON only in this format:
         {{
@@ -535,44 +589,61 @@ class AgentDetector:
             
             classification = json.loads(response)
 
-            # Always create a single comprehensive compound rule
-            anomalous_values = classification.get("anomalous_values", [])
-            normal_values = classification.get("normal_values", [])
+            # Get new classifications from LLM
+            new_anomalous = classification.get("anomalous_values", [])
+            new_normal = classification.get("normal_values", [])
             
-            print(f"[LOG_LEVEL] Anomalous: {anomalous_values}, Normal: {normal_values}")
+            print(f"[LOG_LEVEL] LLM classified - Anomalous: {new_anomalous}, Normal: {new_normal}")
+            
+            # Merge with existing classifications if we have them
+            if existing_comprehensive:
+                # Combine old and new classifications
+                all_anomalous = list(set(existing_comprehensive.get("anomalous_values", []) + new_anomalous))
+                all_normal = list(set(existing_comprehensive.get("normal_values", []) + new_normal))
+                print(f"[LOG_LEVEL] Merged classifications - Total Anomalous: {all_anomalous}, Total Normal: {all_normal}")
+            else:
+                # First time - use classifications as-is
+                all_anomalous = new_anomalous
+                all_normal = new_normal
             
             # Verify all values are classified
-            all_classified = set(anomalous_values + normal_values)
-            all_unique = set(unique_values)
+            all_classified = set(all_anomalous + all_normal)
+            all_unique = set(all_values)
             if all_classified != all_unique:
                 missing = all_unique - all_classified
                 print(f"[LOG_LEVEL] Warning: unclassified values {missing} - adding to normal")
                 # Add missing values to normal by default
-                normal_values.extend(list(missing))
+                all_normal.extend(list(missing))
             
             # Create comprehensive compound rule that handles all log levels
-            if anomalous_values:
+            if all_anomalous:
                 comprehensive_rule = {
                     "type": "compound",
                     "logic": "OR",
                     "rules": [],
-                    "normal_label": 0,  # Any anomalous value → normal_label=0 (anomaly)
-                    "anomaly_label": 1,  # Non-anomalous values → anomaly_label=1 (normal)
+                    "normal_label": 0,     # FIXED: Normal records get 0
+                    "anomaly_label": 1,    # FIXED: Anomaly records get 1 
                     "source": "comprehensive_log_level_analysis",
                     "confidence_boost": 0.95 if classification.get("confidence") == "high" else 0.85,
                     "comprehensive": True,  # Mark this as a comprehensive rule
-                    "all_values": unique_values,  # Store all possible values
-                    "anomalous_values": anomalous_values,
-                    "normal_values": normal_values
+                    "all_values": all_values,  # Store all possible values
+                    "anomalous_values": all_anomalous,
+                    "normal_values": all_normal
                 }
                 
-                for value in anomalous_values:
+                for value in all_anomalous:
                     comprehensive_rule["rules"].append({
                         "column": log_level_column,
                         "operator": "==", 
                         "value": value
                     })
-                print(f"[LOG_LEVEL] Created comprehensive rule with {len(anomalous_values)} anomalous values")
+                    
+                if existing_comprehensive and new_values_only:
+                    print(f"[LOG_LEVEL] Updated comprehensive rule: added {len(new_anomalous)} new anomalous values")
+                    print(f"[LOG_LEVEL] Total rule now covers {len(all_anomalous)} anomalous values: {all_anomalous}")
+                else:
+                    print(f"[LOG_LEVEL] Created comprehensive rule with {len(all_anomalous)} anomalous values")
+                    
                 return [comprehensive_rule]
             else:
                 print(f"[LOG_LEVEL] Warning: no anomalous values identified")
@@ -1013,19 +1084,24 @@ class AgentDetector:
         df.to_csv(save_path, index=False)
         print(f"[agent] Saved full results to {save_path}")
         
-        # Extract and save only the anomalies (errors) to a separate file
-        anomalies_df = df[df["anomaly_label"] == 0].copy()
-        
-        # Create a more readable filename for the anomalies file
-        anomalies_filename = filename.replace(".csv", "_errors.csv")
-        anomalies_save_path = os.path.join(results_folder, anomalies_filename)
-        
-        # Save the errors to a separate file
-        if len(anomalies_df) == 0:
-            print(f"[agent] No errors/anomalies detected!")
+        # FIXED: Extract and save only the anomalies (where anomaly_label == 1)
+        if "anomaly_label" in df.columns:
+            anomalies_df = df[df["anomaly_label"] == 1].copy()
+            
+            # Create a more readable filename for the anomalies file
+            anomalies_filename = filename.replace(".csv", "_errors.csv")
+            anomalies_save_path = os.path.join(results_folder, anomalies_filename)
+            
+            # Save the errors to a separate file
+            if len(anomalies_df) == 0:
+                print(f"[agent] No errors/anomalies detected!")
+                # Create an empty file to maintain consistency
+                pd.DataFrame().to_csv(anomalies_save_path, index=False)
+            else:
+                anomalies_df.to_csv(anomalies_save_path, index=False)
+                print(f"[agent] Saved {len(anomalies_df)} errors/anomalies to {anomalies_save_path}")
         else:
-            anomalies_df.to_csv(anomalies_save_path, index=False)
-            print(f"[agent] Saved {len(anomalies_df)} errors/anomalies to {anomalies_save_path}")
+            print(f"[agent] No anomaly_label column found - skipping errors file creation")
 
     def detect_anomalies_pure_and_hybrid(self, df: pd.DataFrame, schema_id, label_col: Optional[str] = "y") -> pd.DataFrame:
         # Get base hyperparams
@@ -1056,6 +1132,18 @@ class AgentDetector:
                 best_confidence = sorted_heuristics[0].get("confidence", 0)
                 print(f"[agent] Using best heuristic (confidence: {best_confidence}): {col} {op} '{val}'")
         
+        # Determine and update detection approach based on heuristic availability
+        if has_heuristic and best_heuristic:
+            detection_approach = "hybrid_ml_heuristic"
+            print(f"[DETECTION:APPROACH] Using hybrid approach (ML + heuristics)")
+        else:
+            detection_approach = "pure_ml" 
+            print(f"[DETECTION:APPROACH] Using pure ML approach (no heuristics)")
+
+        # Update the log structure with the detection approach
+        self.update_log_structure_with_detection_approach(schema_id, detection_approach)
+
+
         # Prepare features
         df_features = df.drop(columns=[label_col]) if label_col in df.columns else df.copy()
         cat_cols = df_features.select_dtypes(include=["object", "category"]).columns
@@ -1080,8 +1168,8 @@ class AgentDetector:
             try:
                 print(f"[agent] Estimating contamination using heuristic: {col} {op} '{val}'")
                 # Use heuristic to estimate current batch contamination
-                anomaly_label = best_heuristic.get("anomaly_label", 0)  # Get the anomaly label (what the rule considers anomalous)
-                normal_label = best_heuristic.get("normal_label", 1)
+                anomaly_label = best_heuristic.get("anomaly_label", 1)  # Get the anomaly label (what the rule considers anomalous)
+                normal_label = best_heuristic.get("normal_label", 0)
 
                 # Check if this is a compound rule
                 if best_heuristic.get("type") == "compound" and (best_heuristic.get("operator") == "OR" or best_heuristic.get("logic") == "OR"):
@@ -1164,7 +1252,7 @@ class AgentDetector:
         # 3. Generate scores and predictions
         df = df.copy()
         df["anomaly_score"] = model.decision_function(X)
-        df["ml_anomaly_label"] = ((model.predict(X) + 1) / 2).astype(int)
+        df["ml_anomaly_label"] = (model.predict(X) == -1).astype(int)
         
         # 4. Apply heuristic as additional signal if we have one
         if best_heuristic:
@@ -1208,18 +1296,32 @@ class AgentDetector:
                     print(f"[agent] Compound rule found {heuristic_anomaly.sum()} potential anomalies")
                 
                 else:
-                    # Original single rule code
+                    # FIXED: Single rule code with correct logic
                     col = best_heuristic.get("column")
                     op = best_heuristic.get("operator")
                     val = best_heuristic.get("value")
+                    anomaly_label = best_heuristic.get("anomaly_label", 1)  # What the rule detects when it matches
                     
                     if col in df.columns:
                         if op == "==":
-                            df["heuristic_anomaly"] = (df[col] != val).astype(int)
+                            matches = (df[col] == val)
                         elif op == "!=":
-                            df["heuristic_anomaly"] = (df[col] == val).astype(int)
+                            matches = (df[col] != val)
                         elif op == "contains":
-                            df["heuristic_anomaly"] = df[col].astype(str).apply(lambda x: 1 if val in x else 0).astype(int)
+                            matches = df[col].astype(str).str.contains(str(val), case=False, na=False)
+                        else:
+                            print(f"[agent] Unsupported operator '{op}' - skipping heuristic")
+                            matches = pd.Series(False, index=df.index)
+                        
+                        # Apply the logic based on what the rule is designed to detect
+                        if anomaly_label == 1:
+                            # Rule detects anomalies when it matches
+                            df["heuristic_anomaly"] = matches.astype(int)
+                        else:
+                            # Rule detects normal behavior when it matches, so invert
+                            df["heuristic_anomaly"] = (~matches).astype(int)
+                        
+                        print(f"[agent] Single rule found {df['heuristic_anomaly'].sum()} potential anomalies")
                 
                 # Final decision logic - DIRECTLY use estimated contamination
                 # This ensures our contamination estimate directly affects results
@@ -1314,7 +1416,7 @@ class AgentDetector:
                     print(f"[DECISION:FINAL] Decision confidence: MEDIUM (ML-driven)")
 
                 # Final label (1=normal, 0=anomaly)
-                df["anomaly_label"] = 1 - combined_decision.astype(int)
+                df["anomaly_label"] = combined_decision.astype(int)
                 print(f"[DECISION:OUTPUT] Anomaly labels set: 0={combined_decision.sum()}, 1={len(df) - combined_decision.sum()}")
                 print(f"[DECISION:HYBRID] ═══ END DECISION ANALYSIS ═══\n")
                 return df
@@ -1327,7 +1429,8 @@ class AgentDetector:
         threshold_idx = max(1, min(threshold_idx, len(scores)-1))
         dynamic_threshold = scores.iloc[threshold_idx]
         print(f"[agent] Using ML-only with dynamic threshold {dynamic_threshold:.3f} (at {est_contamination:.1%} contamination)")
-        df["anomaly_label"] = 1 - (df["anomaly_score"] <= dynamic_threshold).astype(int)
+        # FIXED: Remove the inversion - lower scores (≤ threshold) should be anomalies (1)
+        df["anomaly_label"] = (df["anomaly_score"] <= dynamic_threshold).astype(int)
         return df
 
     def tune_isolation_forest_unsupervised(self, df: pd.DataFrame, schema_id: str) -> dict:
@@ -1465,40 +1568,61 @@ class AgentDetector:
         ):
             """
             Plots anomaly scores with anomalies highlighted.
-            Correctly predicted anomalies are green, incorrectly predicted are red crosses.
+            If ground truth is available: correctly predicted anomalies are green, incorrectly predicted are red crosses.
+            If no ground truth: simply highlight detected anomalies in red.
             """
             try:
-                # Check if ground_truth_col exists
-                if ground_truth_col not in df.columns:
-                    print(f"Warning: {ground_truth_col} column not found in dataframe. Skipping plot.")
+                # Check if required columns exist
+                if score_col not in df.columns:
+                    print(f"Warning: {score_col} column not found in dataframe. Cannot create plot.")
                     return
+                if label_col not in df.columns:
+                    print(f"Warning: {label_col} column not found in dataframe. Cannot create plot.")
+                    return
+                
+                plt.figure(figsize=(14, 5))
+                plt.plot(df[score_col], label="Anomaly Score", color="blue", alpha=0.7)
+                
+                # Check if ground_truth_col exists for supervised evaluation
+                if ground_truth_col in df.columns:
+                    print(f"[PLOT] Ground truth column '{ground_truth_col}' found - creating supervised visualization")
                     
-                # Compute ground truth: 1=normal, 0=anomaly
-                y_true = df[ground_truth_col].apply(lambda lvl: 1 if lvl in {"INFO", "DEBUG"} else 0).astype(int)
-                y_pred = df[label_col].astype(int)
+                    # Compute ground truth: 1=normal, 0=anomaly
+                    y_true = df[ground_truth_col].apply(lambda lvl: 1 if lvl in {"INFO", "DEBUG"} else 0).astype(int)
+                    y_pred = df[label_col].astype(int)
+                    
+                    # Correctly predicted anomalies (true anomaly and predicted anomaly)
+                    correct_anom = (y_true == 0) & (y_pred == 0)
+                    # Incorrectly predicted anomalies (predicted anomaly but not true anomaly)
+                    incorrect_anom = (y_true == 1) & (y_pred == 0)
+
+                    # Plot correctly predicted anomalies (green)
+                    plt.scatter(df.index[correct_anom], df[score_col][correct_anom], color="green", label="Correct Anomaly", marker="o")
+                    # Plot incorrectly predicted anomalies (red X)
+                    plt.scatter(df.index[incorrect_anom], df[score_col][incorrect_anom], color="red", label="Incorrect Anomaly", marker="x")
+                else:
+                    print(f"[PLOT] No ground truth column - creating unsupervised visualization")
+                    
+                    # Without ground truth, just highlight detected anomalies
+                    y_pred = df[label_col].astype(int)
+                    detected_anomalies = (y_pred == 1)  # anomaly_label == 1 means anomaly
+                    
+                    # Plot detected anomalies in red
+                    plt.scatter(df.index[detected_anomalies], df[score_col][detected_anomalies], 
+                              color="red", label="Detected Anomaly", marker="o", s=50)
+
+                plt.title(title)
+                plt.xlabel("Row Index")
+                plt.ylabel("Anomaly Score")
+                plt.legend()
+                plt.tight_layout()
+                plt.show()
+                
             except Exception as e:
                 print(f"Warning: Could not create plot - {str(e)}")
+                import traceback
+                print(f"Full error: {traceback.format_exc()}")
                 return
-
-            plt.figure(figsize=(14, 5))
-            plt.plot(df[score_col], label="Anomaly Score", color="blue", alpha=0.7)
-
-            # Correctly predicted anomalies (true anomaly and predicted anomaly)
-            correct_anom = (y_true == 0) & (y_pred == 0)
-            # Incorrectly predicted anomalies (predicted anomaly but not true anomaly)
-            incorrect_anom = (y_true == 1) & (y_pred == 0)
-
-            # Plot correctly predicted anomalies (green)
-            plt.scatter(df.index[correct_anom], df[score_col][correct_anom], color="green", label="Correct Anomaly", marker="o")
-            # Plot incorrectly predicted anomalies (red X)
-            plt.scatter(df.index[incorrect_anom], df[score_col][incorrect_anom], color="red", label="Incorrect Anomaly", marker="x")
-
-            plt.title(title)
-            plt.xlabel("Row Index")
-            plt.ylabel("Anomaly Score")
-            plt.legend()
-            plt.tight_layout()
-            plt.show()
 
     def evaluate_and_print(self, df, ground_truth_col, ml_pred_col, llm_pred_col):
 

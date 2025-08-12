@@ -1,0 +1,184 @@
+{
+  "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911": {
+    "[client [IP]] File does not exist: [PATH]": {
+      "root_cause": "The error indicates that a client is attempting to access a file or resource that does not exist on the server.",
+      "severity": "Low",
+      "mitigation": "1. Verify that the path in the error message is correct and intended to be accessed by the client. 2. If the path is incorrect, update the client configuration or application code to reference the correct path. 3. If the path is intended to be accessed, ensure that the file or resource exists in the specified location on the server. 4. Check file permissions to ensure that the web server process has read access to the file or directory. 5. If the file should exist but does not, investigate further to determine if it was accidentally deleted or if there is an issue with the deployment process.",
+      "template_id": 0,
+      "pattern_template": "[client [IP]] File does not exist: [PATH]",
+      "timestamp": "2025-08-12 11:57:44",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] script not found or unable to stat: [PATH]": {
+      "root_cause": "The error indicates that the web server is unable to locate or access the specified script file, which is likely due to either the script file being missing or the web server not having the necessary permissions to read the file.",
+      "severity": "Medium",
+      "mitigation": "1. Verify that the script file exists at the specified path (/var/www/cgi-bin/awstats) on the server. 2. Check the file permissions to ensure that the web server user has read access to the script file. 3. If the file is missing, restore it from a backup or reinstall the application that provides the script. 4. If the permissions are incorrect, update them using the appropriate command (e.g., 'chmod' on Linux/Unix systems).",
+      "template_id": 1,
+      "pattern_template": "[client [IP]] script not found or unable to stat: [PATH]",
+      "timestamp": "2025-08-12 11:57:48",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "jk2_init() Can't find child [NUM] in scoreboard": {
+      "root_cause": "This error occurs when the Apache Tomcat connector (mod_jk) is unable to find a child process in its scoreboard. The scoreboard is an internal data structure used by Tomcat to keep track of worker processes.",
+      "severity": "Medium",
+      "mitigation": "1. Check if the Tomcat process ID (PID) specified in the error message is still running. If not, restart Tomcat.\n2. Increase the scoreboard size in the mod_jk configuration file (workers.properties) by setting a higher value for the 'scoreboard' directive.\n3. Check for any system resource constraints like low memory or high CPU usage that could be causing worker processes to crash.\n4. Restart the Apache HTTP server after making configuration changes.",
+      "template_id": 2,
+      "pattern_template": "jk2_init() Can't find child [NUM] in scoreboard",
+      "timestamp": "2025-08-12 11:57:53",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "mod_jk child init [NUM] -[NUM]": {
+      "root_cause": "This error is related to the Apache mod_jk module, which is used for load balancing between Apache HTTP Server and Tomcat web servers. The specific error message 'mod_jk child init 1 -2' indicates that the mod_jk module failed to initialize a child process or worker thread.",
+      "severity": "Medium",
+      "mitigation": "1. Check the Apache error log for more detailed information about the failure.\n2. Ensure that the Tomcat instance(s) that Apache is trying to connect to are running and accessible.\n3. Verify the mod_jk configuration in the Apache configuration files (httpd.conf or included configuration files) for any errors or misconfigurations.\n4. Check if there are any resource constraints (e.g., memory, file descriptors) that might be preventing the child process from initializing.\n5. If the issue persists, try restarting both Apache and Tomcat services.",
+      "template_id": 3,
+      "pattern_template": "mod_jk child init [NUM] -[NUM]",
+      "timestamp": "2025-08-12 11:57:58",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] Directory index forbidden by rule: [PATH]": {
+      "root_cause": "This error occurs when a client attempts to access a directory on the web server that is not configured to display a directory listing or index file.",
+      "severity": "Low",
+      "mitigation": "1. Check the web server configuration file (e.g., Apache httpd.conf or Nginx nginx.conf) and ensure that directory listings are enabled for the specified path. 2. If directory listings should not be enabled, create an index.html file in the directory to serve as the default file. 3. Alternatively, configure the web server to return a 403 Forbidden error instead of the 'Directory index forbidden' message for better security.",
+      "template_id": 4,
+      "pattern_template": "[client [IP]] Directory index forbidden by rule: [PATH]",
+      "timestamp": "2025-08-12 11:58:00",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] File does not exist: [PATH][TRAVERSAL][TRAVERSAL]": {
+      "root_cause": "This error indicates an attempt to traverse the file system path and access files or directories outside of the intended web root directory, which is a common technique used in directory traversal attacks.",
+      "severity": "High",
+      "mitigation": "1. Implement strict input validation and sanitization to prevent path traversal attempts. 2. Restrict the web server's access to only the intended web root directory. 3. Enable web server logging and monitor for suspicious activity. 4. Keep software up-to-date and apply security patches promptly. 5. Implement additional security controls like a Web Application Firewall (WAF) to detect and block such attacks.",
+      "template_id": 5,
+      "pattern_template": "[client [IP]] File does not exist: [PATH][TRAVERSAL][TRAVERSAL]",
+      "timestamp": "2025-08-12 11:58:03",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] File does not exist: [PATH][TRAVERSAL]xc1[ENCODED][TRAVERSAL]": {
+      "root_cause": "This error indicates an attempt to traverse the directory structure and access files outside of the intended web root directory, which is a common technique used in directory traversal attacks.",
+      "severity": "High",
+      "mitigation": "1. Implement strict input validation to sanitize user input and prevent directory traversal attempts. 2. Configure web servers to disable serving files outside the web root directory. 3. Ensure that error messages do not reveal sensitive information about the file system structure. 4. Keep web server software and dependencies up-to-date with the latest security patches. 5. Implement additional security controls like web application firewalls (WAFs) to detect and block directory traversal attempts.",
+      "template_id": 6,
+      "pattern_template": "[client [IP]] File does not exist: [PATH][TRAVERSAL]xc1[ENCODED][TRAVERSAL]",
+      "timestamp": "2025-08-12 11:58:06",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] Invalid method in request get [PATH][ENCODED][PATH][ENCODED][PATH]?[PATH]+dir": {
+      "root_cause": "The error indicates an attempted directory traversal attack, where the attacker is trying to navigate to restricted system directories and execute commands by exploiting path traversal vulnerabilities.",
+      "severity": "High",
+      "mitigation": "1. Implement input validation to sanitize user input and prevent path traversal attacks. 2. Update web server configurations to disable directory listing and restrict access to sensitive directories. 3. Deploy a Web Application Firewall (WAF) to detect and block such attacks. 4. Keep software up-to-date and apply security patches regularly. 5. Enable logging and monitor for suspicious activity.",
+      "template_id": 7,
+      "pattern_template": "[client [IP]] Invalid method in request get [PATH][ENCODED][PATH][ENCODED][PATH]?[PATH]+dir",
+      "timestamp": "2025-08-12 11:58:09",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "env.createBean2(): Factory error creating channel.jni:jni ( channel.jni, jni)": {
+      "root_cause": "The error indicates a problem with creating a JNI (Java Native Interface) bean or component during the application server startup or deployment process. This typically occurs when there is a mismatch between the native library and the Java Virtual Machine (JVM) version or architecture.",
+      "severity": "High",
+      "mitigation": "1. Verify that the native library (e.g., .so or .dll file) is compatible with the JVM version and architecture being used.\n2. Check if the native library file is present in the correct location and has the appropriate permissions.\n3. Review the application server logs for any additional information or error messages related to the JNI issue.\n4. If the issue persists, try updating the JVM or the native library to a compatible version.\n5. As a last resort, you may need to rebuild the native library from source code to ensure compatibility with the specific JVM version and architecture.",
+      "template_id": 8,
+      "pattern_template": "env.createBean2(): Factory error creating channel.jni:jni ( channel.jni, jni)",
+      "timestamp": "2025-08-12 11:58:13",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "config.update(): Can't create channel.jni:jni": {
+      "root_cause": "This error typically occurs when the Java Native Interface (JNI) fails to create a communication channel between Java and native code (C/C++). It can be caused by issues with the JNI library, system library paths, or compatibility issues between Java and native libraries.",
+      "severity": "Medium",
+      "mitigation": "1. Ensure that the JNI library and its dependencies are properly installed and configured on the system.\n2. Check the system library paths (e.g., LD_LIBRARY_PATH on Linux) and make sure they include the directories containing the required native libraries.\n3. Verify that the Java version and the native libraries are compatible and built with the same architecture (32-bit or 64-bit).\n4. If the issue persists, try updating Java and the native libraries to the latest versions.\n5. Check the application logs and system logs for any additional information or error messages related to the JNI issue.",
+      "template_id": 9,
+      "pattern_template": "config.update(): Can't create channel.jni:jni",
+      "timestamp": "2025-08-12 11:58:16",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "env.createBean2(): Factory error creating vm: ( vm, )": {
+      "root_cause": "The error message 'env.createBean2(): Factory error creating vm: ( vm, )' typically indicates a problem with the Java Virtual Machine (JVM) or the application server environment during the creation of a bean (an object managed by the application server).",
+      "severity": "High",
+      "mitigation": "1. Check the application server logs for more detailed error messages related to the bean creation failure. 2. Ensure that the required dependencies and resources for the bean are available and configured correctly. 3. Verify that the bean class and its dependencies are compiled correctly and present in the application's classpath. 4. Check for any recent changes or updates to the application server, JVM, or related configurations that may have caused the issue. 5. If the issue persists, try restarting the application server or JVM.",
+      "template_id": 10,
+      "pattern_template": "env.createBean2(): Factory error creating vm: ( vm, )",
+      "timestamp": "2025-08-12 11:58:20",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "config.update(): Can't create vm:": {
+      "root_cause": "This error typically occurs when there is an issue with creating a new virtual machine (VM) during a configuration update process. It could be due to insufficient resources (e.g., memory, disk space), conflicting configurations, or permissions issues.",
+      "severity": "High",
+      "mitigation": "1. Check available system resources (RAM, disk space) and ensure they meet the requirements for creating a new VM.\n2. Review the configuration settings for the new VM and ensure there are no conflicts with existing VMs or system configurations.\n3. Verify that the user account or process attempting to create the VM has the necessary permissions.\n4. Check system logs for any additional error messages or clues related to the failure.\n5. If the issue persists, consult the documentation or seek support from the virtualization software vendor.",
+      "template_id": 11,
+      "pattern_template": "config.update(): Can't create vm:",
+      "timestamp": "2025-08-12 11:58:24",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "env.createBean2(): Factory error creating worker.jni:onStartup ( worker.jni, onStartup)": {
+      "root_cause": "This error typically occurs when the Apache Tomcat server is unable to load a native library (JNI) during startup. It suggests an issue with the JNI library or its dependencies.",
+      "severity": "High",
+      "mitigation": "1. Verify that the JNI library file (e.g., worker.jni) exists in the appropriate location (usually the $CATALINA_BASE/bin directory for Tomcat).\n2. Check if the JNI library has the correct permissions to be loaded by the Tomcat process.\n3. Ensure that any dependencies required by the JNI library are installed and accessible.\n4. If the issue persists, try removing or renaming the problematic JNI library file and restart Tomcat to see if it resolves the issue.\n5. Check the Tomcat logs for any additional information or error messages related to the JNI library loading failure.",
+      "template_id": 12,
+      "pattern_template": "env.createBean2(): Factory error creating worker.jni:onStartup ( worker.jni, onStartup)",
+      "timestamp": "2025-08-12 11:58:28",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "config.update(): Can't create worker.jni:onStartup": {
+      "root_cause": "This error typically occurs when there is a problem with the Java Native Interface (JNI) library or the Java Virtual Machine (JVM) environment on the system. It suggests that the JVM is unable to load or initialize a required native library or component during the startup process.",
+      "severity": "High",
+      "mitigation": "1. Check if the required native libraries (e.g., .so or .dll files) are present in the correct location and have the appropriate permissions.\n2. Ensure that the JVM version and configuration are compatible with the application and operating system.\n3. Review the JVM startup logs for any additional error messages or clues about the root cause.\n4. Update or reinstall the JVM and any related libraries or components.\n5. If the issue persists, consult the application vendor or developer for further assistance.",
+      "template_id": 13,
+      "pattern_template": "config.update(): Can't create worker.jni:onStartup",
+      "timestamp": "2025-08-12 11:58:31",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "env.createBean2(): Factory error creating worker.jni:onShutdown ( worker.jni, onShutdown)": {
+      "root_cause": "This error typically occurs when the Apache Tomcat server is unable to create or initialize a Java Native Interface (JNI) worker object during the shutdown process.",
+      "severity": "Medium",
+      "mitigation": "1. Check if there are any conflicting or outdated native libraries (e.g., JNI libraries) installed on the system that may be causing conflicts with Tomcat's JNI workers.\n2. Ensure that the Tomcat server has the necessary permissions to access and load the required JNI libraries.\n3. Review the Tomcat logs for any additional error messages or clues related to the JNI worker initialization failure.\n4. If the issue persists, try updating Tomcat to the latest stable version or consider disabling the JNI workers if they are not required for your application.",
+      "template_id": 14,
+      "pattern_template": "env.createBean2(): Factory error creating worker.jni:onShutdown ( worker.jni, onShutdown)",
+      "timestamp": "2025-08-12 11:58:35",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "config.update(): Can't create worker.jni:onShutdown": {
+      "root_cause": "This error typically occurs when there is a problem with the Java Native Interface (JNI) library or the worker process that handles JNI calls. It can be caused by a variety of issues, such as a corrupted or missing JNI library, a conflict with other software, or a system resource issue.",
+      "severity": "Medium",
+      "mitigation": "1. Check if the JNI library is present and not corrupted. Reinstall or update the JNI library if necessary.\n2. Check for any software conflicts or incompatibilities that may be interfering with the JNI library or worker process.\n3. Restart the service or application that is generating the error.\n4. If the issue persists, try rebooting the system to release any system resources that may be causing the problem.\n5. Check system logs for any additional information or error messages that may provide more context about the root cause.\n6. If the issue cannot be resolved, contact the vendor or developer of the software for further assistance.",
+      "template_id": 15,
+      "pattern_template": "config.update(): Can't create worker.jni:onShutdown",
+      "timestamp": "2025-08-12 11:58:39",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "mod_jk child init [NUM] [NUM]": {
+      "root_cause": "This error is related to the Apache mod_jk module, which is used for load balancing between Apache HTTP Server and Tomcat web servers. The message indicates that a child process of mod_jk is being initialized.",
+      "severity": "Low",
+      "mitigation": "This message is informational and does not necessarily indicate an error. However, if you see a large number of these messages repeatedly, it could indicate an issue with the mod_jk configuration or the backend Tomcat servers. In that case, you should check the mod_jk configuration files and ensure that the Tomcat servers are running correctly.",
+      "template_id": 16,
+      "pattern_template": "mod_jk child init [NUM] [NUM]",
+      "timestamp": "2025-08-12 11:58:42",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] File does not exist: [PATH][TRAVERSAL]xc0[ENCODED][TRAVERSAL]": {
+      "root_cause": "This error indicates an attempt to traverse the directory structure and access files outside of the intended web root directory, which is a common technique used in directory traversal attacks.",
+      "severity": "High",
+      "mitigation": "1. Validate and sanitize all user input to prevent directory traversal attempts. 2. Implement a web application firewall (WAF) to detect and block such attacks. 3. Ensure that the web server is configured to restrict access to files and directories outside the web root. 4. Keep the web server software and all dependencies up-to-date with the latest security patches. 5. Enable and monitor access logs for suspicious activity.",
+      "template_id": 17,
+      "pattern_template": "[client [IP]] File does not exist: [PATH][TRAVERSAL]xc0[ENCODED][TRAVERSAL]",
+      "timestamp": "2025-08-12 11:58:46",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] Invalid method in request get [PATH][TRAVERSAL]5c[TRAVERSAL]winnt[PATH]?[PATH]+dir": {
+      "root_cause": "This error pattern indicates an attempted directory traversal attack, where a malicious client is trying to access unauthorized system files and directories by manipulating the URL path.",
+      "severity": "High",
+      "mitigation": "1. Implement input validation to sanitize and reject URLs containing traversal sequences like '../' or '%2e%2e%2f'.\n2. Configure web server to disable directory listing and prevent serving system files.\n3. Enable web application firewall rules to detect and block such attacks.\n4. Review access logs regularly for suspicious activity and implement IP blocking for persistent offenders.\n5. Keep web server software and dependencies up-to-date with latest security patches.",
+      "template_id": 18,
+      "pattern_template": "[client [IP]] Invalid method in request get [PATH][TRAVERSAL]5c[TRAVERSAL]winnt[PATH]?[PATH]+dir",
+      "timestamp": "2025-08-12 11:58:50",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    },
+    "[client [IP]] Invalid method in request get [PATH][TRAVERSAL]\ufffd\ufffd\ufffd[TRAVERSAL][TRAVERSAL][PATH]?[PATH]+dir": {
+      "root_cause": "The error indicates an attempted directory traversal attack, where a malicious client is trying to access unauthorized system files and directories by manipulating the URL path.",
+      "severity": "High",
+      "mitigation": "1. Implement input validation to sanitize and reject URLs containing directory traversal patterns (e.g., ../ or ..%5c). 2. Configure web server to disable the ability to execute scripts or commands from the web root directory. 3. Enable and monitor web application firewall rules to detect and block such attacks. 4. Keep web server software and dependencies up-to-date with the latest security patches. 5. Implement strict access controls and least privilege principles for web server processes.",
+      "template_id": 19,
+      "pattern_template": "[client [IP]] Invalid method in request get [PATH][TRAVERSAL]\ufffd\ufffd\ufffd[TRAVERSAL][TRAVERSAL][PATH]?[PATH]+dir",
+      "timestamp": "2025-08-12 11:58:54",
+      "schema_id": "f88a4e573320d6f4ba344f99657ad810ef36b755f5d7539f03f16cacd3cc2911"
+    }
+  }
+}
